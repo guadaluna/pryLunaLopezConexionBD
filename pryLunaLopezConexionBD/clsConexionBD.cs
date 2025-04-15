@@ -103,12 +103,10 @@ namespace pryLunaLopezConexionBD
 
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                // Consulta SQL para obtener el contacto por Id
                 string consulta = "SELECT * FROM Contactos WHERE Id = @id";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
-                    // Agregar parámetro de Id
                     comando.Parameters.AddWithValue("@Id", id);
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
