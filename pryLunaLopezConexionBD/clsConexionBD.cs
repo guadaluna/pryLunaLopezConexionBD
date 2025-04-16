@@ -42,6 +42,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+        //Mostrar en agenda
         public void MostrarContactos(DataGridView dgv)
         {
             try
@@ -63,6 +64,7 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        //Llenar combobox de categorias de la agenda
         public void llenarComboCate(ComboBox cmb)
         {
             ConectarBD();
@@ -79,6 +81,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+        //Agregar contactos de la agenda
         public void agregarContacto()
         {
             ConectarBD();
@@ -96,7 +99,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
-
+        //Buscar contacto
         public DataTable BuscarContactoPorId(int id)
         {
             DataTable resultado = new DataTable();
@@ -117,6 +120,7 @@ namespace pryLunaLopezConexionBD
             return resultado;
         }
 
+        //Modificar contacto en la agenda
         public void modificarContacto()
         {
             ConectarBD();
@@ -138,6 +142,45 @@ namespace pryLunaLopezConexionBD
             }
 
             MessageBox.Show("Contacto actualizado correctamente.");
+        }
+
+        //Mostrar un producto en la tabla
+        public void MostrarProducto(DataGridView dgv)
+        {
+            try
+            {
+                ConectarBD();
+                string consulta = "SELECT Id, Nombre, Descripcion, Precio, Stock, CategoriaId FROM Productos";
+
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexionBaseDatos);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+
+                dgv.AutoGenerateColumns = true;
+
+                dgv.DataSource = tabla;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar Productos: " + ex.Message);
+            }
+        }
+
+        //Agregar un producto a la tabla
+
+        public void agregarProducto()
+        {
+            ConectarBD();
+            string insertQuery = "INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaId) VALUES (@nombre, @descripcion, @precio, @stock, @categoriaId)";
+            SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
+            cmd.Parameters.AddWithValue("@nombre", "Mouse inalámbrico");
+            cmd.Parameters.AddWithValue("@descripcion", "Mouse óptico USB");
+            cmd.Parameters.AddWithValue("@precio", 150000);
+            cmd.Parameters.AddWithValue("@stock", 20);
+            cmd.Parameters.AddWithValue("@categoriaId", 1); // Tecnología
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("✅ Producto agregado con éxito.");
+
         }
 
     }
