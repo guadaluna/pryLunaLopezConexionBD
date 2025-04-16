@@ -26,6 +26,7 @@ namespace pryLunaLopezConexionBD
             conexionBD.MostrarContactos(dgvContactos);
             conexionBD.llenarComboCate(cmbCategoria);
             CargarComboBox();
+            dgvContactos.CellEndEdit += dgvContactos_CellEndEdit;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -96,6 +97,23 @@ namespace pryLunaLopezConexionBD
         private void btnVerTodos_Click(object sender, EventArgs e)
         {
             conexionBD.MostrarContactos(dgvContactos);
+        }
+
+        private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvContactos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            clsConexionBD modificar = new clsConexionBD();
+            modificar.id = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["Id"].Value);
+            modificar.nombre = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            modificar.apellido = dgvContactos.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
+            modificar.telefono = dgvContactos.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
+            modificar.categoriaId = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["CategoriaId"].Value);
+            modificar.modificarContacto();
+           
         }
     }
 }

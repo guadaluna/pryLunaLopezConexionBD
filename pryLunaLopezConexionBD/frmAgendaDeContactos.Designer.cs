@@ -41,26 +41,31 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.cmbId = new System.Windows.Forms.ComboBox();
-            this.lblId = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
+            this.grpAgregarContacto = new System.Windows.Forms.GroupBox();
+            this.grpBuscar = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
+            this.grpAgregarContacto.SuspendLayout();
+            this.grpBuscar.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvContactos
             // 
+            this.dgvContactos.AllowUserToAddRows = false;
+            this.dgvContactos.AllowUserToDeleteRows = false;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactos.Location = new System.Drawing.Point(150, 43);
+            this.dgvContactos.Location = new System.Drawing.Point(202, 12);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.Size = new System.Drawing.Size(637, 360);
             this.dgvContactos.TabIndex = 0;
+            this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(29, 43);
+            this.lblNombre.Location = new System.Drawing.Point(35, 25);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 1;
@@ -68,14 +73,14 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(32, 59);
+            this.txtNombre.Location = new System.Drawing.Point(38, 41);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(32, 107);
+            this.txtApellido.Location = new System.Drawing.Point(38, 89);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 4;
@@ -83,7 +88,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(29, 91);
+            this.lblApellido.Location = new System.Drawing.Point(35, 73);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 3;
@@ -91,7 +96,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(32, 159);
+            this.txtTelefono.Location = new System.Drawing.Point(38, 141);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 6;
@@ -99,7 +104,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(29, 143);
+            this.lblTelefono.Location = new System.Drawing.Point(35, 125);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 5;
@@ -107,7 +112,7 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(32, 218);
+            this.txtCorreo.Location = new System.Drawing.Point(38, 200);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 20);
             this.txtCorreo.TabIndex = 8;
@@ -115,7 +120,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(29, 202);
+            this.lblCorreo.Location = new System.Drawing.Point(35, 184);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(38, 13);
             this.lblCorreo.TabIndex = 7;
@@ -124,23 +129,23 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(29, 256);
+            this.lblCategoria.Location = new System.Drawing.Point(35, 238);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(54, 13);
             this.lblCategoria.TabIndex = 9;
-            this.lblCategoria.Text = "Categoria";
+            this.lblCategoria.Text = "Categoría";
             // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(32, 273);
+            this.cmbCategoria.Location = new System.Drawing.Point(38, 255);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(100, 21);
             this.cmbCategoria.TabIndex = 10;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(32, 306);
+            this.btnAgregar.Location = new System.Drawing.Point(38, 288);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 23);
             this.btnAgregar.TabIndex = 11;
@@ -150,7 +155,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(816, 86);
+            this.btnEliminar.Location = new System.Drawing.Point(27, 67);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 23);
             this.btnEliminar.TabIndex = 12;
@@ -158,36 +163,18 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(32, 335);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 23);
-            this.btnModificar.TabIndex = 13;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
             // cmbId
             // 
             this.cmbId.FormattingEnabled = true;
-            this.cmbId.Location = new System.Drawing.Point(816, 59);
+            this.cmbId.Location = new System.Drawing.Point(27, 40);
             this.cmbId.Name = "cmbId";
             this.cmbId.Size = new System.Drawing.Size(100, 21);
             this.cmbId.TabIndex = 14;
             this.cmbId.SelectedIndexChanged += new System.EventHandler(this.cmbId_SelectedIndexChanged);
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(813, 43);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 15;
-            this.lblId.Text = "Id";
-            // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(816, 115);
+            this.btnBuscar.Location = new System.Drawing.Point(27, 96);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 23);
             this.btnBuscar.TabIndex = 16;
@@ -197,7 +184,7 @@
             // 
             // btnVerTodos
             // 
-            this.btnVerTodos.Location = new System.Drawing.Point(816, 144);
+            this.btnVerTodos.Location = new System.Drawing.Point(27, 125);
             this.btnVerTodos.Name = "btnVerTodos";
             this.btnVerTodos.Size = new System.Drawing.Size(100, 23);
             this.btnVerTodos.TabIndex = 17;
@@ -205,35 +192,57 @@
             this.btnVerTodos.UseVisualStyleBackColor = true;
             this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
+            // grpAgregarContacto
+            // 
+            this.grpAgregarContacto.Controls.Add(this.txtCorreo);
+            this.grpAgregarContacto.Controls.Add(this.lblNombre);
+            this.grpAgregarContacto.Controls.Add(this.txtNombre);
+            this.grpAgregarContacto.Controls.Add(this.lblApellido);
+            this.grpAgregarContacto.Controls.Add(this.txtApellido);
+            this.grpAgregarContacto.Controls.Add(this.lblTelefono);
+            this.grpAgregarContacto.Controls.Add(this.txtTelefono);
+            this.grpAgregarContacto.Controls.Add(this.btnAgregar);
+            this.grpAgregarContacto.Controls.Add(this.lblCorreo);
+            this.grpAgregarContacto.Controls.Add(this.cmbCategoria);
+            this.grpAgregarContacto.Controls.Add(this.lblCategoria);
+            this.grpAgregarContacto.Location = new System.Drawing.Point(12, 12);
+            this.grpAgregarContacto.Name = "grpAgregarContacto";
+            this.grpAgregarContacto.Size = new System.Drawing.Size(184, 360);
+            this.grpAgregarContacto.TabIndex = 18;
+            this.grpAgregarContacto.TabStop = false;
+            this.grpAgregarContacto.Text = "Agregar y modificar contacto";
+            // 
+            // grpBuscar
+            // 
+            this.grpBuscar.Controls.Add(this.cmbId);
+            this.grpBuscar.Controls.Add(this.btnEliminar);
+            this.grpBuscar.Controls.Add(this.btnVerTodos);
+            this.grpBuscar.Controls.Add(this.btnBuscar);
+            this.grpBuscar.Location = new System.Drawing.Point(845, 12);
+            this.grpBuscar.Name = "grpBuscar";
+            this.grpBuscar.Size = new System.Drawing.Size(152, 360);
+            this.grpBuscar.TabIndex = 19;
+            this.grpBuscar.TabStop = false;
+            this.grpBuscar.Text = "Buscar y eliminar contacto";
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 463);
-            this.Controls.Add(this.btnVerTodos);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.cmbId);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.cmbCategoria);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
+            this.BackColor = System.Drawing.Color.Thistle;
+            this.ClientSize = new System.Drawing.Size(1020, 390);
+            this.Controls.Add(this.grpBuscar);
+            this.Controls.Add(this.grpAgregarContacto);
             this.Controls.Add(this.dgvContactos);
             this.Name = "frmAgenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda de contactos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
+            this.grpAgregarContacto.ResumeLayout(false);
+            this.grpAgregarContacto.PerformLayout();
+            this.grpBuscar.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -252,11 +261,11 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ComboBox cmbId;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVerTodos;
+        private System.Windows.Forms.GroupBox grpAgregarContacto;
+        private System.Windows.Forms.GroupBox grpBuscar;
     }
 }
 
