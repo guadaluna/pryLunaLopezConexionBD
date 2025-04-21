@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Data.SqlTypes;
 
 
 namespace pryLunaLopezConexionBD
@@ -32,16 +33,23 @@ namespace pryLunaLopezConexionBD
         public int id;
 
 
+        public string descripcion;
+        public decimal precio;
+        public int stock;
+        public int codigo;
+
+
         public void ConectarBD()
         {
-                conexionBaseDatos = new SqlConnection(cadenaConexion);
+            conexionBaseDatos = new SqlConnection(cadenaConexion);
 
-                nombreBaseDeDatos = conexionBaseDatos.Database;
+            nombreBaseDeDatos = conexionBaseDatos.Database;
 
-                conexionBaseDatos.Open();
+            conexionBaseDatos.Open();
 
         }
 
+        //TABLA CONTACTOS
         //Mostrar en agenda
         public void MostrarContactos(DataGridView dgv)
         {
@@ -144,13 +152,17 @@ namespace pryLunaLopezConexionBD
             MessageBox.Show("Contacto actualizado correctamente.");
         }
 
-        //Mostrar un producto en la tabla
-        public void MostrarProducto(DataGridView dgv)
+
+
+        //TABLA PRODUCTOS
+        //Agregar un producto a la tabla
+
+        public void mostrarProductos(DataGridView dgv)
         {
             try
             {
                 ConectarBD();
-                string consulta = "SELECT Id, Nombre, Descripcion, Precio, Stock, CategoriaId FROM Productos";
+                string consulta = "SELECT Codigo, Nombre, Descripcion, Precio, Stock, CategoriaId FROM Productos";
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexionBaseDatos);
                 DataTable tabla = new DataTable();
@@ -162,26 +174,92 @@ namespace pryLunaLopezConexionBD
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al mostrar Productos: " + ex.Message);
+                MessageBox.Show("Error al mostrar contactos: " + ex.Message);
             }
         }
-
-        //Agregar un producto a la tabla
 
         public void agregarProducto()
         {
             ConectarBD();
             string insertQuery = "INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaId) VALUES (@nombre, @descripcion, @precio, @stock, @categoriaId)";
             SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
-            cmd.Parameters.AddWithValue("@nombre", "Mouse inalámbrico");
-            cmd.Parameters.AddWithValue("@descripcion", "Mouse óptico USB");
-            cmd.Parameters.AddWithValue("@precio", 150000);
-            cmd.Parameters.AddWithValue("@stock", 20);
-            cmd.Parameters.AddWithValue("@categoriaId", 1); // Tecnología
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+            cmd.Parameters.AddWithValue("@precio", precio);
+            cmd.Parameters.AddWithValue("@stock", stock);
+            cmd.Parameters.AddWithValue("@categoriaId", categoriaId); // Tecnología
             cmd.ExecuteNonQuery();
-            Console.WriteLine("✅ Producto agregado con éxito.");
+            MessageBox.Show("✅ Producto agregado con éxito.");
 
         }
+
+        public void modificarProducto()
+        {
+            ConectarBD();
+            string updateQuery = "UPDATE Productos SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @Codigo";
+            SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+
+            cmd.Parameters.AddWithValue("@Codigo", codigo);
+            cmd.Parameters.AddWithValue("@categoriaId", categoriaId);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+            cmd.Parameters.AddWithValue("@precio", precio);
+            cmd.Parameters.AddWithValue("@stock", stock);
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("🔄 Producto actualizado.");
+
+
+        }
+
+        public void CargarCmbProductos(ComboBox cmb)
+        {
+            ConectarBD();
+            string consulta = "SELECT Codigo, Nombre AS Producto FROM Productos";
+            SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cmb.DisplayMember = "Producto";
+            cmb.ValueMember = "Codigo";
+            cmb.DataSource = dt;
+
+        }
+
+        public DataTable BuscarProductoPorId(int codigo)
+        {
+            DataTable resultado = new DataTable();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consulta = "SELECT * FROM Productos WHERE Codigo = @codigo";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@codigo", codigo);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(resultado);
+                }
+            }
+
+            return resultado;
+        }
+
+        public void eliminarProducto(int codigo)
+        {
+            ConectarBD();
+            string consulta = "DELETE FROM Productos WHERE Codigo = @codigo";
+            SqlCommand deleteCmd = new SqlCommand(consulta, conexionBaseDatos);
+            deleteCmd.Parameters.AddWithValue("@codigo", codigo);
+            deleteCmd.ExecuteNonQuery();
+
+            MessageBox.Show("El contacto ha sido eliminado exitosamente");
+        }
+
+
+
 
     }
 }

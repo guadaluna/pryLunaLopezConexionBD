@@ -27,6 +27,7 @@ namespace pryLunaLopezConexionBD
             conexionBD.llenarComboCate(cmbCategoria);
             CargarComboBox();
             dgvContactos.CellEndEdit += dgvContactos_CellEndEdit;
+            dgvContactos.Columns["Id"].ReadOnly = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -114,6 +115,12 @@ namespace pryLunaLopezConexionBD
             modificar.categoriaId = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["CategoriaId"].Value);
             modificar.modificarContacto();
            
+        }
+
+        private void btnVerProductos_Click(object sender, EventArgs e)
+        {
+            frmProductos v = new frmProductos();
+            v.ShowDialog();
         }
     }
 }

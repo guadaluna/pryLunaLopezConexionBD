@@ -46,6 +46,7 @@
             this.btnVerTodos = new System.Windows.Forms.Button();
             this.grpAgregarContacto = new System.Windows.Forms.GroupBox();
             this.grpBuscar = new System.Windows.Forms.GroupBox();
+            this.btnVerProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.grpAgregarContacto.SuspendLayout();
             this.grpBuscar.SuspendLayout();
@@ -210,10 +211,11 @@
             this.grpAgregarContacto.Size = new System.Drawing.Size(184, 360);
             this.grpAgregarContacto.TabIndex = 18;
             this.grpAgregarContacto.TabStop = false;
-            this.grpAgregarContacto.Text = "Agregar y modificar contacto";
+            this.grpAgregarContacto.Text = "Agregar contacto";
             // 
             // grpBuscar
             // 
+            this.grpBuscar.Controls.Add(this.btnVerProductos);
             this.grpBuscar.Controls.Add(this.cmbId);
             this.grpBuscar.Controls.Add(this.btnEliminar);
             this.grpBuscar.Controls.Add(this.btnVerTodos);
@@ -224,6 +226,16 @@
             this.grpBuscar.TabIndex = 19;
             this.grpBuscar.TabStop = false;
             this.grpBuscar.Text = "Buscar y eliminar contacto";
+            // 
+            // btnVerProductos
+            // 
+            this.btnVerProductos.Location = new System.Drawing.Point(26, 169);
+            this.btnVerProductos.Name = "btnVerProductos";
+            this.btnVerProductos.Size = new System.Drawing.Size(100, 23);
+            this.btnVerProductos.TabIndex = 18;
+            this.btnVerProductos.Text = "Ver Productos";
+            this.btnVerProductos.UseVisualStyleBackColor = true;
+            this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
             // 
             // frmAgenda
             // 
@@ -266,6 +278,7 @@
         private System.Windows.Forms.Button btnVerTodos;
         private System.Windows.Forms.GroupBox grpAgregarContacto;
         private System.Windows.Forms.GroupBox grpBuscar;
+        private System.Windows.Forms.Button btnVerProductos;
     }
 }
 
