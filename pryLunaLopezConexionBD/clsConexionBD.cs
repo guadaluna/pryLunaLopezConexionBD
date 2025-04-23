@@ -75,81 +75,113 @@ namespace pryLunaLopezConexionBD
         //Llenar combobox de categorias de la agenda
         public void llenarComboCate(ComboBox cmb)
         {
-            ConectarBD();
-            string consulta = "SELECT Id, Nombre FROM Categorias";
-            SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos);
-            SqlDataReader lector = comando.ExecuteReader();
+            try
+            {
+                ConectarBD();
+                string consulta = "SELECT Id, Nombre FROM Categorias";
+                SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos);
+                SqlDataReader lector = comando.ExecuteReader();
 
-            DataTable tabla = new DataTable();
-            tabla.Load(lector);
+                DataTable tabla = new DataTable();
+                tabla.Load(lector);
 
-            cmb.DisplayMember = "Nombre";
-            cmb.ValueMember = "Id";
-            cmb.DataSource = tabla;
+                cmb.DisplayMember = "Nombre";
+                cmb.ValueMember = "Id";
+                cmb.DataSource = tabla;
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+           
 
         }
 
         //Agregar contactos de la agenda
         public void agregarContacto()
         {
-            ConectarBD();
-            string consulta = "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, CategoriaId) VALUES (@Nombre, @Apellido, @Telefono, @Correo, @CategoriaId)";
-            using (SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos))
+            try
             {
-                comando.Parameters.AddWithValue("@Nombre", nombre);
-                comando.Parameters.AddWithValue("@Apellido", apellido);
-                comando.Parameters.AddWithValue("@Telefono", telefono);
-                comando.Parameters.AddWithValue("@Correo", correo);
-                comando.Parameters.AddWithValue("@CategoriaId", categoriaId);
+                ConectarBD();
+                string consulta = "INSERT INTO Contactos (Nombre, Apellido, Telefono, Correo, CategoriaId) VALUES (@Nombre, @Apellido, @Telefono, @Correo, @CategoriaId)";
+                using (SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos))
+                {
+                    comando.Parameters.AddWithValue("@Nombre", nombre);
+                    comando.Parameters.AddWithValue("@Apellido", apellido);
+                    comando.Parameters.AddWithValue("@Telefono", telefono);
+                    comando.Parameters.AddWithValue("@Correo", correo);
+                    comando.Parameters.AddWithValue("@CategoriaId", categoriaId);
 
-                comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
+
 
         }
 
         //Buscar contacto
         public DataTable BuscarContactoPorId(int id)
         {
-            DataTable resultado = new DataTable();
-
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            try
             {
-                string consulta = "SELECT * FROM Contactos WHERE Id = @id";
+                DataTable resultado = new DataTable();
 
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    comando.Parameters.AddWithValue("@Id", id);
+                    string consulta = "SELECT * FROM Contactos WHERE Id = @id";
 
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    adaptador.Fill(resultado);
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Id", id);
+
+                        SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                        adaptador.Fill(resultado);
+                    }
                 }
+
+                return resultado;
             }
 
-            return resultado;
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+
         }
 
         //Modificar contacto en la agenda
         public void modificarContacto()
         {
-            ConectarBD();
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            try
             {
-                conexion.Open();
-                string consulta = "UPDATE Contactos SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, CategoriaId = @CategoriaId WHERE Id = @Id";
-
-                using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                ConectarBD();
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    cmd.Parameters.AddWithValue("@Nombre", nombre);
-                    cmd.Parameters.AddWithValue("@Apellido", apellido);
-                    cmd.Parameters.AddWithValue("@Telefono", telefono);
-                    cmd.Parameters.AddWithValue("@CategoriaId", categoriaId);
-                    cmd.Parameters.AddWithValue("@Id", id);
+                    conexion.Open();
+                    string consulta = "UPDATE Contactos SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, CategoriaId = @CategoriaId WHERE Id = @Id";
 
-                    cmd.ExecuteNonQuery();
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", apellido);
+                        cmd.Parameters.AddWithValue("@Telefono", telefono);
+                        cmd.Parameters.AddWithValue("@CategoriaId", categoriaId);
+                        cmd.Parameters.AddWithValue("@Id", id);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-            }
 
-            MessageBox.Show("Contacto actualizado correctamente.");
+                MessageBox.Show("Contacto actualizado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
 
@@ -180,82 +212,118 @@ namespace pryLunaLopezConexionBD
 
         public void agregarProducto()
         {
-            ConectarBD();
-            string insertQuery = "INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaId) VALUES (@nombre, @descripcion, @precio, @stock, @categoriaId)";
-            SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@descripcion", descripcion);
-            cmd.Parameters.AddWithValue("@precio", precio);
-            cmd.Parameters.AddWithValue("@stock", stock);
-            cmd.Parameters.AddWithValue("@categoriaId", categoriaId); // Tecnología
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("✅ Producto agregado con éxito.");
+            try
+            {
+                ConectarBD();
+                string insertQuery = "INSERT INTO Productos (Nombre, Descripcion, Precio, Stock, CategoriaId) VALUES (@nombre, @descripcion, @precio, @stock, @categoriaId)";
+                SqlCommand cmd = new SqlCommand(insertQuery, conexionBaseDatos);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@precio", precio);
+                cmd.Parameters.AddWithValue("@stock", stock);
+                cmd.Parameters.AddWithValue("@categoriaId", categoriaId); // Tecnología
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("✅ Producto agregado con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
         public void modificarProducto()
         {
-            ConectarBD();
-            string updateQuery = "UPDATE Productos SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @Codigo";
-            SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
+            try
+            {
+                ConectarBD();
+                string updateQuery = "UPDATE Productos SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Stock = @stock, CategoriaId = @categoriaId WHERE Codigo = @Codigo";
+                SqlCommand cmd = new SqlCommand(updateQuery, conexionBaseDatos);
 
-            cmd.Parameters.AddWithValue("@Codigo", codigo);
-            cmd.Parameters.AddWithValue("@categoriaId", categoriaId);
-            cmd.Parameters.AddWithValue("@nombre", nombre);
-            cmd.Parameters.AddWithValue("@descripcion", descripcion);
-            cmd.Parameters.AddWithValue("@precio", precio);
-            cmd.Parameters.AddWithValue("@stock", stock);
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+                cmd.Parameters.AddWithValue("@categoriaId", categoriaId);
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@precio", precio);
+                cmd.Parameters.AddWithValue("@stock", stock);
 
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("🔄 Producto actualizado.");
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("🔄 Producto actualizado.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
 
         }
 
         public void CargarCmbProductos(ComboBox cmb)
         {
-            ConectarBD();
-            string consulta = "SELECT Codigo, Nombre AS Producto FROM Productos";
-            SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            try
+            {
+                ConectarBD();
+                string consulta = "SELECT Codigo, Nombre AS Producto FROM Productos";
+                SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-            cmb.DisplayMember = "Producto";
-            cmb.ValueMember = "Codigo";
-            cmb.DataSource = dt;
+                cmb.DisplayMember = "Producto";
+                cmb.ValueMember = "Codigo";
+                cmb.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
         public DataTable BuscarProductoPorId(int codigo)
         {
-            DataTable resultado = new DataTable();
-
-            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            try
             {
-                string consulta = "SELECT * FROM Productos WHERE Codigo = @codigo";
+                DataTable resultado = new DataTable();
 
-                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    comando.Parameters.AddWithValue("@codigo", codigo);
+                    string consulta = "SELECT * FROM Productos WHERE Codigo = @codigo";
 
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    adaptador.Fill(resultado);
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@codigo", codigo);
+
+                        SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                        adaptador.Fill(resultado);
+                    }
                 }
-            }
 
-            return resultado;
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
         }
 
         public void eliminarProducto(int codigo)
         {
-            ConectarBD();
-            string consulta = "DELETE FROM Productos WHERE Codigo = @codigo";
-            SqlCommand deleteCmd = new SqlCommand(consulta, conexionBaseDatos);
-            deleteCmd.Parameters.AddWithValue("@codigo", codigo);
-            deleteCmd.ExecuteNonQuery();
+            try
+            {
+                ConectarBD();
+                string consulta = "DELETE FROM Productos WHERE Codigo = @codigo";
+                SqlCommand deleteCmd = new SqlCommand(consulta, conexionBaseDatos);
+                deleteCmd.Parameters.AddWithValue("@codigo", codigo);
+                deleteCmd.ExecuteNonQuery();
 
-            MessageBox.Show("El contacto ha sido eliminado exitosamente");
+                MessageBox.Show("El contacto ha sido eliminado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
 
