@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.dgvContactos = new System.Windows.Forms.DataGridView();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.cmbId = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnVerTodos = new System.Windows.Forms.Button();
-            this.grpAgregarContacto = new System.Windows.Forms.GroupBox();
             this.grpBuscar = new System.Windows.Forms.GroupBox();
             this.btnVerProductos = new System.Windows.Forms.Button();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.grpAgregarContacto = new System.Windows.Forms.GroupBox();
+            this.txtNombre = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.txtApellido = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.txtTelefono = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.txtCorreo = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.cmbCategoria = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.btnAgregar = new ReaLTaiizor.Controls.AloneButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
-            this.grpAgregarContacto.SuspendLayout();
             this.grpBuscar.SuspendLayout();
+            this.grpAgregarContacto.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvContactos
@@ -62,97 +62,6 @@
             this.dgvContactos.Size = new System.Drawing.Size(637, 360);
             this.dgvContactos.TabIndex = 0;
             this.dgvContactos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(35, 25);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(38, 41);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 2;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(38, 89);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 4;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(35, 73);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 3;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(38, 141);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 6;
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(35, 125);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 5;
-            this.lblTelefono.Text = "Teléfono";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(38, 200);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
-            this.txtCorreo.TabIndex = 8;
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(35, 184);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
-            this.lblCorreo.TabIndex = 7;
-            this.lblCorreo.Text = "Correo";
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(35, 238);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(54, 13);
-            this.lblCategoria.TabIndex = 9;
-            this.lblCategoria.Text = "Categoría";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(38, 255);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cmbCategoria.TabIndex = 10;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(38, 288);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 23);
-            this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -193,26 +102,6 @@
             this.btnVerTodos.UseVisualStyleBackColor = true;
             this.btnVerTodos.Click += new System.EventHandler(this.btnVerTodos_Click);
             // 
-            // grpAgregarContacto
-            // 
-            this.grpAgregarContacto.Controls.Add(this.txtCorreo);
-            this.grpAgregarContacto.Controls.Add(this.lblNombre);
-            this.grpAgregarContacto.Controls.Add(this.txtNombre);
-            this.grpAgregarContacto.Controls.Add(this.lblApellido);
-            this.grpAgregarContacto.Controls.Add(this.txtApellido);
-            this.grpAgregarContacto.Controls.Add(this.lblTelefono);
-            this.grpAgregarContacto.Controls.Add(this.txtTelefono);
-            this.grpAgregarContacto.Controls.Add(this.btnAgregar);
-            this.grpAgregarContacto.Controls.Add(this.lblCorreo);
-            this.grpAgregarContacto.Controls.Add(this.cmbCategoria);
-            this.grpAgregarContacto.Controls.Add(this.lblCategoria);
-            this.grpAgregarContacto.Location = new System.Drawing.Point(12, 12);
-            this.grpAgregarContacto.Name = "grpAgregarContacto";
-            this.grpAgregarContacto.Size = new System.Drawing.Size(184, 360);
-            this.grpAgregarContacto.TabIndex = 18;
-            this.grpAgregarContacto.TabStop = false;
-            this.grpAgregarContacto.Text = "Agregar contacto";
-            // 
             // grpBuscar
             // 
             this.grpBuscar.Controls.Add(this.btnVerProductos);
@@ -237,6 +126,180 @@
             this.btnVerProductos.UseVisualStyleBackColor = true;
             this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
             // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(17, 240);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(54, 13);
+            this.lblCategoria.TabIndex = 9;
+            this.lblCategoria.Text = "Categoría";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(17, 186);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
+            this.lblCorreo.TabIndex = 7;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(17, 127);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 5;
+            this.lblTelefono.Text = "Teléfono";
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(17, 75);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.TabIndex = 3;
+            this.lblApellido.Text = "Apellido";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(17, 27);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // grpAgregarContacto
+            // 
+            this.grpAgregarContacto.Controls.Add(this.btnAgregar);
+            this.grpAgregarContacto.Controls.Add(this.cmbCategoria);
+            this.grpAgregarContacto.Controls.Add(this.txtCorreo);
+            this.grpAgregarContacto.Controls.Add(this.txtTelefono);
+            this.grpAgregarContacto.Controls.Add(this.txtApellido);
+            this.grpAgregarContacto.Controls.Add(this.txtNombre);
+            this.grpAgregarContacto.Controls.Add(this.lblNombre);
+            this.grpAgregarContacto.Controls.Add(this.lblApellido);
+            this.grpAgregarContacto.Controls.Add(this.lblTelefono);
+            this.grpAgregarContacto.Controls.Add(this.lblCorreo);
+            this.grpAgregarContacto.Controls.Add(this.lblCategoria);
+            this.grpAgregarContacto.Location = new System.Drawing.Point(12, 12);
+            this.grpAgregarContacto.Name = "grpAgregarContacto";
+            this.grpAgregarContacto.Size = new System.Drawing.Size(184, 360);
+            this.grpAgregarContacto.TabIndex = 18;
+            this.grpAgregarContacto.TabStop = false;
+            this.grpAgregarContacto.Text = "Agregar contacto";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.Transparent;
+            this.txtNombre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtNombre.EdgeColor = System.Drawing.Color.White;
+            this.txtNombre.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNombre.Location = new System.Drawing.Point(20, 44);
+            this.txtNombre.MaxLength = 32767;
+            this.txtNombre.Multiline = false;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = false;
+            this.txtNombre.Size = new System.Drawing.Size(128, 28);
+            this.txtNombre.TabIndex = 23;
+            this.txtNombre.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNombre.UseSystemPasswordChar = false;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.BackColor = System.Drawing.Color.Transparent;
+            this.txtApellido.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtApellido.EdgeColor = System.Drawing.Color.White;
+            this.txtApellido.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
+            this.txtApellido.Location = new System.Drawing.Point(20, 91);
+            this.txtApellido.MaxLength = 32767;
+            this.txtApellido.Multiline = false;
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = false;
+            this.txtApellido.Size = new System.Drawing.Size(128, 28);
+            this.txtApellido.TabIndex = 24;
+            this.txtApellido.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtApellido.UseSystemPasswordChar = false;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.BackColor = System.Drawing.Color.Transparent;
+            this.txtTelefono.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtTelefono.EdgeColor = System.Drawing.Color.White;
+            this.txtTelefono.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
+            this.txtTelefono.Location = new System.Drawing.Point(20, 143);
+            this.txtTelefono.MaxLength = 32767;
+            this.txtTelefono.Multiline = false;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = false;
+            this.txtTelefono.Size = new System.Drawing.Size(128, 28);
+            this.txtTelefono.TabIndex = 25;
+            this.txtTelefono.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTelefono.UseSystemPasswordChar = false;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.Color.Transparent;
+            this.txtCorreo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtCorreo.EdgeColor = System.Drawing.Color.White;
+            this.txtCorreo.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCorreo.Location = new System.Drawing.Point(20, 202);
+            this.txtCorreo.MaxLength = 32767;
+            this.txtCorreo.Multiline = false;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = false;
+            this.txtCorreo.Size = new System.Drawing.Size(128, 28);
+            this.txtCorreo.TabIndex = 26;
+            this.txtCorreo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCorreo.UseSystemPasswordChar = false;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cmbCategoria.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
+            this.cmbCategoria.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
+            this.cmbCategoria.ColorC = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(240)))));
+            this.cmbCategoria.ColorD = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.cmbCategoria.ColorE = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.cmbCategoria.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.cmbCategoria.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(119)))), ((int)(((byte)(118)))));
+            this.cmbCategoria.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
+            this.cmbCategoria.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.cmbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbCategoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCategoria.DropDownHeight = 100;
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.cmbCategoria.IntegralHeight = false;
+            this.cmbCategoria.ItemHeight = 20;
+            this.cmbCategoria.Location = new System.Drawing.Point(20, 256);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(128, 26);
+            this.cmbCategoria.StartIndex = 0;
+            this.cmbCategoria.TabIndex = 27;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.EnabledCalc = true;
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnAgregar.Location = new System.Drawing.Point(20, 297);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(128, 29);
+            this.btnAgregar.TabIndex = 28;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnAgregar_Click);
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,9 +314,9 @@
             this.Text = "Agenda de contactos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
+            this.grpBuscar.ResumeLayout(false);
             this.grpAgregarContacto.ResumeLayout(false);
             this.grpAgregarContacto.PerformLayout();
-            this.grpBuscar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -261,24 +324,24 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvContactos;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ComboBox cmbId;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnVerTodos;
-        private System.Windows.Forms.GroupBox grpAgregarContacto;
         private System.Windows.Forms.GroupBox grpBuscar;
         private System.Windows.Forms.Button btnVerProductos;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.GroupBox grpAgregarContacto;
+        private ReaLTaiizor.Controls.DungeonTextBox txtCorreo;
+        private ReaLTaiizor.Controls.DungeonTextBox txtTelefono;
+        private ReaLTaiizor.Controls.DungeonTextBox txtApellido;
+        private ReaLTaiizor.Controls.DungeonTextBox txtNombre;
+        private ReaLTaiizor.Controls.DungeonComboBox cmbCategoria;
+        private ReaLTaiizor.Controls.AloneButton btnAgregar;
     }
 }
 

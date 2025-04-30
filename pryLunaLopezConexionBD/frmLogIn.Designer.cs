@@ -65,7 +65,6 @@
             this.txtContraseña.ReadOnly = false;
             this.txtContraseña.Size = new System.Drawing.Size(161, 29);
             this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.Text = "aloneTextBox1";
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtContraseña.UseSystemPasswordChar = false;
             // 
@@ -82,7 +81,6 @@
             this.txtUsuario.ReadOnly = false;
             this.txtUsuario.Size = new System.Drawing.Size(161, 29);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "aloneTextBox2";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.UseSystemPasswordChar = false;
             // 

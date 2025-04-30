@@ -29,18 +29,7 @@ namespace pryLunaLopezConexionBD
             conexionBD.CargarCmbProductos(cmbProducto);
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            clsConexionBD agregar = new clsConexionBD();
-            agregar.nombre = txtNombre.Text;
-            agregar.descripcion = txtDescripcion.Text;
-            agregar.precio = Convert.ToDecimal(txtPrecio.Text);
-            agregar.stock = Convert.ToInt32(numStock.Value);
-            agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
-            agregar.agregarProducto();
 
-            conexionBD.mostrarProductos(dgvProductos);
-        }
 
         private void dgvProductos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -74,6 +63,19 @@ namespace pryLunaLopezConexionBD
             clsConexionBD conexion = new clsConexionBD();
             conexion.eliminarProducto(codigo);
             conexion.mostrarProductos(dgvProductos);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsConexionBD agregar = new clsConexionBD();
+            agregar.nombre = txtNombre.Text;
+            agregar.descripcion = txtDescripcion.Text;
+            agregar.precio = Convert.ToDecimal(txtPrecio.Text);
+            agregar.stock = Convert.ToInt32(dungeonNumeric1.Value);
+            agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+            agregar.agregarProducto();
+
+            conexionBD.mostrarProductos(dgvProductos);
         }
     }
 }

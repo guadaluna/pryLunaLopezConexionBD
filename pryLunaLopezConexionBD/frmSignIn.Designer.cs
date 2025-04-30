@@ -144,7 +144,6 @@
             this.txtUsuario.ReadOnly = false;
             this.txtUsuario.Size = new System.Drawing.Size(161, 29);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "aloneTextBox2";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.UseSystemPasswordChar = false;
             // 
@@ -173,7 +172,6 @@
             this.txtContraseña.ReadOnly = false;
             this.txtContraseña.Size = new System.Drawing.Size(161, 29);
             this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.Text = "aloneTextBox1";
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtContraseña.UseSystemPasswordChar = false;
             // 
@@ -202,7 +200,6 @@
             this.txtNombre.ReadOnly = false;
             this.txtNombre.Size = new System.Drawing.Size(161, 29);
             this.txtNombre.TabIndex = 14;
-            this.txtNombre.Text = "aloneTextBox2";
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNombre.UseSystemPasswordChar = false;
             // 
@@ -231,7 +228,6 @@
             this.txtApellido.ReadOnly = false;
             this.txtApellido.Size = new System.Drawing.Size(161, 29);
             this.txtApellido.TabIndex = 13;
-            this.txtApellido.Text = "aloneTextBox1";
             this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtApellido.UseSystemPasswordChar = false;
             // 
@@ -272,7 +268,6 @@
             this.txtRepContra.ReadOnly = false;
             this.txtRepContra.Size = new System.Drawing.Size(161, 29);
             this.txtRepContra.TabIndex = 17;
-            this.txtRepContra.Text = "aloneTextBox1";
             this.txtRepContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtRepContra.UseSystemPasswordChar = false;
             // 

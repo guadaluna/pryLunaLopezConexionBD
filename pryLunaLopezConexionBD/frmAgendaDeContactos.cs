@@ -30,22 +30,7 @@ namespace pryLunaLopezConexionBD
             dgvContactos.Columns["Id"].ReadOnly = true;
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            clsConexionBD agregar = new clsConexionBD();
-            agregar.nombre = txtNombre.Text;
-            agregar.apellido = txtApellido.Text;
-            agregar.telefono = txtTelefono.Text;
-            agregar.correo = txtCorreo.Text;
-            agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
-            agregar.agregarContacto();
 
-            MessageBox.Show("El contacto ha sido añadido exitosamente");
-
-            conexionBD.MostrarContactos(dgvContactos);
-
-
-        }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -121,6 +106,21 @@ namespace pryLunaLopezConexionBD
         {
             frmProductos v = new frmProductos();
             v.ShowDialog();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsConexionBD agregar = new clsConexionBD();
+            agregar.nombre = txtNombre.Text;
+            agregar.apellido = txtApellido.Text;
+            agregar.telefono = txtTelefono.Text;
+            agregar.correo = txtCorreo.Text;
+            agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+            agregar.agregarContacto();
+
+            MessageBox.Show("El contacto ha sido añadido exitosamente");
+
+            conexionBD.MostrarContactos(dgvContactos);
         }
     }
 }
