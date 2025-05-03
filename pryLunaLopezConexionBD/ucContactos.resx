@@ -117,34 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgCandado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAONJREFUWEft
-        lmENwkAMRicBCUjAAUhAAhKQgAOQggNwMByAA3AA31vWhFyWXQkdf+hLXrjdla4rLGmTfMFcLntZ/4y1
-        vMpnIXucTcpB2g0f8tzL2vb3chK20m7MusTOccNGJDN5lyQfazNnxBDLd8LgiUhMu2sQE96FnSTpUOtL
-        LJbPMOypVt3VOMR4u+Xm/wrgt24liSIkl/tP+f4+R+sq4iLdwU7sNaYTVazaaNx5s4AsIAvIArIAm3Aj
-        Z31ykfPWXVWw0ZvB8hSkDbTkrsI0awNIpEf50aS8kEw3EZIrGaBpXliWug4Dn9lEAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="imgReCandado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAONJREFUWEft
-        lmENwkAMRicBCUjAAUhAAhKQgAOQggNwMByAA3AA31vWhFyWXQkdf+hLXrjdla4rLGmTfMFcLntZ/4y1
-        vMpnIXucTcpB2g0f8tzL2vb3chK20m7MusTOccNGJDN5lyQfazNnxBDLd8LgiUhMu2sQE96FnSTpUOtL
-        LJbPMOypVt3VOMR4u+Xm/wrgt24liSIkl/tP+f4+R+sq4iLdwU7sNaYTVazaaNx5s4AsIAvIArIAm3Aj
-        Z31ykfPWXVWw0ZvB8hSkDbTkrsI0awNIpEf50aS8kEw3EZIrGaBpXliWug4Dn9lEAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="imUsuario.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAASdJREFUWEft
-        lQ0NwjAQhScBKTgACUhAAg7ACTgACTgAB+AAHMD7Fl6yAN1PdwsJ2Ze8pGuv1+v12hUjIxlMpLV0kh4v
-        0aaPsUFZSjfJC7+LsYU0CCzuhQ7SXDK06fN4eBCk1jsnkBQOEtvQ49hI3nkTzgRzwjhLOK2mPQU22FKY
-        YeAQtaWrfSM/D+Ao4bDLETAnDBfhvvyqx8Guyq8guFJ3CcdtriG24a8ijwvOnYmZZEg7fR4f7DWsBpHS
-        oItfpG+LVoVNeBA7yQvwKFFgU8nQps8PFtpKIXhxCqtNZWPjgu0dhM8ch9UdN4GtM9HrOK4STnLuNHOY
-        S01k4TvNuebimqh7O5L4t5qze+MstPmNf+D0dzn7d1wLWcfARNSXKD8jI39JUTwB8R531U0cTe4AAAAA
-        SUVORK5CYII=
-</value>
-  </data>
 </root>

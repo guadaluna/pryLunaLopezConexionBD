@@ -17,37 +17,56 @@ namespace pryLunaLopezConexionBD
             InitializeComponent();
         }
 
-        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        bool mostrarContraseña = false;
 
+        clsConexionBD conexionBD = new clsConexionBD();
+
+        private void foxLinkLabel2_Click_1(object sender, EventArgs e)
+        {
+            frmSignIn signIn = new frmSignIn();
+ 
+            signIn.Show();
+            this.Hide();
+
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "" || txtContraseña.Text == "")
+            {
+                MessageBox.Show("Por favor complete los campos");
+            }
+            else
+            {
+                conexionBD.user = txtUsuario.Text;
+                conexionBD.password = txtContraseña.Text;
+
+                if (conexionBD.IniciarSesion())
+                {
+                    MessageBox.Show("Inicio de sesión exitoso");
+                    frmPrincipal form = new frmPrincipal();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
+            }
+        }
+
+        private void picVerContraseña_Click(object sender, EventArgs e)
+        {
+            mostrarContraseña = !mostrarContraseña;
+
+            txtContraseña.UseSystemPasswordChar = !mostrarContraseña;
+
+            picVerContraseña.Image = mostrarContraseña
+                ? Properties.Resources.icons8_eye_15
+                : Properties.Resources.icons8_closed_eye_15;
         }
 
         private void frmLogIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dungeonLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dungeonLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hopeGroupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void foxLinkLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dungeonLabel1_Click_1(object sender, EventArgs e)
         {
 
         }

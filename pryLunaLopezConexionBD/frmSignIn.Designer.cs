@@ -28,65 +28,156 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
-            this.lblSignIn = new ReaLTaiizor.Controls.DungeonLabel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignIn));
+            this.panelCrearCuenta = new System.Windows.Forms.Panel();
+            this.picReContraseña = new System.Windows.Forms.PictureBox();
+            this.picVerContraseña = new System.Windows.Forms.PictureBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.imgCandado = new System.Windows.Forms.PictureBox();
+            this.dungeonLabel2 = new ReaLTaiizor.Controls.DungeonLabel();
+            this.txtReContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.imgReCandado = new System.Windows.Forms.PictureBox();
+            this.imUsuario = new System.Windows.Forms.PictureBox();
+            this.lblCrearCuenta = new ReaLTaiizor.Controls.DungeonLabel();
             this.lblPregunta = new ReaLTaiizor.Controls.DungeonLabel();
-            this.linkLblLogIn = new ReaLTaiizor.Controls.FoxLinkLabel();
-            this.btnSignIn = new ReaLTaiizor.Controls.Button();
-            this.txtUsuario = new ReaLTaiizor.Controls.AloneTextBox();
-            this.lblContraseña = new ReaLTaiizor.Controls.DungeonLabel();
-            this.txtContraseña = new ReaLTaiizor.Controls.AloneTextBox();
+            this.linkLblIniSesion = new ReaLTaiizor.Controls.FoxLinkLabel();
             this.lblUsuario = new ReaLTaiizor.Controls.DungeonLabel();
-            this.txtNombre = new ReaLTaiizor.Controls.AloneTextBox();
-            this.lblApellido = new ReaLTaiizor.Controls.DungeonLabel();
-            this.txtApellido = new ReaLTaiizor.Controls.AloneTextBox();
-            this.lblNombre = new ReaLTaiizor.Controls.DungeonLabel();
-            this.lblRepContra = new ReaLTaiizor.Controls.DungeonLabel();
-            this.txtRepContra = new ReaLTaiizor.Controls.AloneTextBox();
-            this.hopeGroupBox1.SuspendLayout();
+            this.btnSignIn = new ReaLTaiizor.Controls.Button();
+            this.lblContraseña = new ReaLTaiizor.Controls.DungeonLabel();
+            this.panelCrearCuenta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picReContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCandado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgReCandado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // hopeGroupBox1
+            // panelCrearCuenta
             // 
-            this.hopeGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.hopeGroupBox1.Controls.Add(this.lblRepContra);
-            this.hopeGroupBox1.Controls.Add(this.txtRepContra);
-            this.hopeGroupBox1.Controls.Add(this.txtNombre);
-            this.hopeGroupBox1.Controls.Add(this.lblApellido);
-            this.hopeGroupBox1.Controls.Add(this.txtApellido);
-            this.hopeGroupBox1.Controls.Add(this.lblNombre);
-            this.hopeGroupBox1.Controls.Add(this.lblSignIn);
-            this.hopeGroupBox1.Controls.Add(this.lblPregunta);
-            this.hopeGroupBox1.Controls.Add(this.linkLblLogIn);
-            this.hopeGroupBox1.Controls.Add(this.btnSignIn);
-            this.hopeGroupBox1.Controls.Add(this.txtUsuario);
-            this.hopeGroupBox1.Controls.Add(this.lblContraseña);
-            this.hopeGroupBox1.Controls.Add(this.txtContraseña);
-            this.hopeGroupBox1.Controls.Add(this.lblUsuario);
-            this.hopeGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.hopeGroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.hopeGroupBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.hopeGroupBox1.Location = new System.Drawing.Point(12, 12);
-            this.hopeGroupBox1.Name = "hopeGroupBox1";
-            this.hopeGroupBox1.ShowText = false;
-            this.hopeGroupBox1.Size = new System.Drawing.Size(235, 500);
-            this.hopeGroupBox1.TabIndex = 7;
-            this.hopeGroupBox1.TabStop = false;
-            this.hopeGroupBox1.Text = "Por favor ingrese:";
-            this.hopeGroupBox1.ThemeColor = System.Drawing.Color.LavenderBlush;
-            this.hopeGroupBox1.Enter += new System.EventHandler(this.hopeGroupBox1_Enter);
+            this.panelCrearCuenta.BackColor = System.Drawing.Color.Honeydew;
+            this.panelCrearCuenta.Controls.Add(this.picReContraseña);
+            this.panelCrearCuenta.Controls.Add(this.picVerContraseña);
+            this.panelCrearCuenta.Controls.Add(this.txtContraseña);
+            this.panelCrearCuenta.Controls.Add(this.imgCandado);
+            this.panelCrearCuenta.Controls.Add(this.dungeonLabel2);
+            this.panelCrearCuenta.Controls.Add(this.txtReContraseña);
+            this.panelCrearCuenta.Controls.Add(this.txtUsuario);
+            this.panelCrearCuenta.Controls.Add(this.imgReCandado);
+            this.panelCrearCuenta.Controls.Add(this.imUsuario);
+            this.panelCrearCuenta.Controls.Add(this.lblCrearCuenta);
+            this.panelCrearCuenta.Controls.Add(this.lblPregunta);
+            this.panelCrearCuenta.Controls.Add(this.linkLblIniSesion);
+            this.panelCrearCuenta.Controls.Add(this.lblUsuario);
+            this.panelCrearCuenta.Controls.Add(this.btnSignIn);
+            this.panelCrearCuenta.Controls.Add(this.lblContraseña);
+            this.panelCrearCuenta.Location = new System.Drawing.Point(50, 50);
+            this.panelCrearCuenta.Name = "panelCrearCuenta";
+            this.panelCrearCuenta.Size = new System.Drawing.Size(578, 463);
+            this.panelCrearCuenta.TabIndex = 3;
             // 
-            // lblSignIn
+            // picReContraseña
             // 
-            this.lblSignIn.AutoSize = true;
-            this.lblSignIn.BackColor = System.Drawing.Color.Transparent;
-            this.lblSignIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblSignIn.Location = new System.Drawing.Point(68, 15);
-            this.lblSignIn.Name = "lblSignIn";
-            this.lblSignIn.Size = new System.Drawing.Size(80, 21);
-            this.lblSignIn.TabIndex = 12;
-            this.lblSignIn.Text = "Registrate";
+            this.picReContraseña.BackColor = System.Drawing.Color.White;
+            this.picReContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picReContraseña.Image = global::pryLunaLopezConexionBD.Properties.Resources.icons8_closed_eye_15;
+            this.picReContraseña.Location = new System.Drawing.Point(339, 250);
+            this.picReContraseña.Name = "picReContraseña";
+            this.picReContraseña.Size = new System.Drawing.Size(24, 16);
+            this.picReContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picReContraseña.TabIndex = 22;
+            this.picReContraseña.TabStop = false;
+            this.picReContraseña.Click += new System.EventHandler(this.picReContraseña_Click);
+            // 
+            // picVerContraseña
+            // 
+            this.picVerContraseña.BackColor = System.Drawing.Color.White;
+            this.picVerContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picVerContraseña.Image = global::pryLunaLopezConexionBD.Properties.Resources.icons8_closed_eye_15;
+            this.picVerContraseña.Location = new System.Drawing.Point(339, 193);
+            this.picVerContraseña.Name = "picVerContraseña";
+            this.picVerContraseña.Size = new System.Drawing.Size(24, 16);
+            this.picVerContraseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picVerContraseña.TabIndex = 21;
+            this.picVerContraseña.TabStop = false;
+            this.picVerContraseña.Click += new System.EventHandler(this.picVerContraseña_Click);
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Location = new System.Drawing.Point(204, 191);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(161, 20);
+            this.txtContraseña.TabIndex = 20;
+            this.txtContraseña.UseSystemPasswordChar = true;
+            // 
+            // imgCandado
+            // 
+            this.imgCandado.Image = ((System.Drawing.Image)(resources.GetObject("imgCandado.Image")));
+            this.imgCandado.Location = new System.Drawing.Point(178, 191);
+            this.imgCandado.Name = "imgCandado";
+            this.imgCandado.Size = new System.Drawing.Size(20, 20);
+            this.imgCandado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCandado.TabIndex = 19;
+            this.imgCandado.TabStop = false;
+            // 
+            // dungeonLabel2
+            // 
+            this.dungeonLabel2.AutoSize = true;
+            this.dungeonLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dungeonLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.dungeonLabel2.Location = new System.Drawing.Point(201, 171);
+            this.dungeonLabel2.Name = "dungeonLabel2";
+            this.dungeonLabel2.Size = new System.Drawing.Size(74, 17);
+            this.dungeonLabel2.TabIndex = 18;
+            this.dungeonLabel2.Text = "Contraseña";
+            // 
+            // txtReContraseña
+            // 
+            this.txtReContraseña.Location = new System.Drawing.Point(204, 248);
+            this.txtReContraseña.Name = "txtReContraseña";
+            this.txtReContraseña.Size = new System.Drawing.Size(161, 20);
+            this.txtReContraseña.TabIndex = 17;
+            this.txtReContraseña.UseSystemPasswordChar = true;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(204, 131);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(161, 20);
+            this.txtUsuario.TabIndex = 16;
+            // 
+            // imgReCandado
+            // 
+            this.imgReCandado.Image = ((System.Drawing.Image)(resources.GetObject("imgReCandado.Image")));
+            this.imgReCandado.Location = new System.Drawing.Point(178, 248);
+            this.imgReCandado.Name = "imgReCandado";
+            this.imgReCandado.Size = new System.Drawing.Size(20, 20);
+            this.imgReCandado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgReCandado.TabIndex = 14;
+            this.imgReCandado.TabStop = false;
+            // 
+            // imUsuario
+            // 
+            this.imUsuario.Image = ((System.Drawing.Image)(resources.GetObject("imUsuario.Image")));
+            this.imUsuario.Location = new System.Drawing.Point(178, 131);
+            this.imUsuario.Name = "imUsuario";
+            this.imUsuario.Size = new System.Drawing.Size(20, 20);
+            this.imUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imUsuario.TabIndex = 13;
+            this.imUsuario.TabStop = false;
+            // 
+            // lblCrearCuenta
+            // 
+            this.lblCrearCuenta.AutoSize = true;
+            this.lblCrearCuenta.BackColor = System.Drawing.Color.Transparent;
+            this.lblCrearCuenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCrearCuenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.lblCrearCuenta.Location = new System.Drawing.Point(215, 48);
+            this.lblCrearCuenta.Name = "lblCrearCuenta";
+            this.lblCrearCuenta.Size = new System.Drawing.Size(128, 21);
+            this.lblCrearCuenta.TabIndex = 12;
+            this.lblCrearCuenta.Text = "Crear una cuenta";
             // 
             // lblPregunta
             // 
@@ -94,25 +185,38 @@
             this.lblPregunta.BackColor = System.Drawing.Color.Transparent;
             this.lblPregunta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPregunta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblPregunta.Location = new System.Drawing.Point(58, 433);
+            this.lblPregunta.Location = new System.Drawing.Point(225, 402);
             this.lblPregunta.Name = "lblPregunta";
             this.lblPregunta.Size = new System.Drawing.Size(113, 17);
             this.lblPregunta.TabIndex = 11;
             this.lblPregunta.Text = "¿Ya tienes cuenta?";
             // 
-            // linkLblLogIn
+            // linkLblIniSesion
             // 
-            this.linkLblLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLblLogIn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(149)))), ((int)(((byte)(0)))));
-            this.linkLblLogIn.EnabledCalc = true;
-            this.linkLblLogIn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.linkLblLogIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(221)))));
-            this.linkLblLogIn.Location = new System.Drawing.Point(76, 453);
-            this.linkLblLogIn.Name = "linkLblLogIn";
-            this.linkLblLogIn.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(140)))), ((int)(((byte)(229)))));
-            this.linkLblLogIn.Size = new System.Drawing.Size(75, 19);
-            this.linkLblLogIn.TabIndex = 10;
-            this.linkLblLogIn.Text = "Inicia sesión";
+            this.linkLblIniSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.linkLblIniSesion.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(149)))), ((int)(((byte)(0)))));
+            this.linkLblIniSesion.EnabledCalc = true;
+            this.linkLblIniSesion.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.linkLblIniSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(221)))));
+            this.linkLblIniSesion.Location = new System.Drawing.Point(246, 422);
+            this.linkLblIniSesion.Name = "linkLblIniSesion";
+            this.linkLblIniSesion.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(140)))), ((int)(((byte)(229)))));
+            this.linkLblIniSesion.Size = new System.Drawing.Size(76, 19);
+            this.linkLblIniSesion.TabIndex = 10;
+            this.linkLblIniSesion.Text = "Inicia sesión";
+            this.linkLblIniSesion.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.linkLblIniSesion_Click);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.lblUsuario.Location = new System.Drawing.Point(201, 111);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(53, 17);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Usuario";
             // 
             // btnSignIn
             // 
@@ -123,29 +227,14 @@
             this.btnSignIn.Image = null;
             this.btnSignIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSignIn.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btnSignIn.Location = new System.Drawing.Point(36, 370);
+            this.btnSignIn.Location = new System.Drawing.Point(204, 332);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.btnSignIn.Size = new System.Drawing.Size(161, 40);
             this.btnSignIn.TabIndex = 7;
-            this.btnSignIn.Text = "Registrate";
+            this.btnSignIn.Text = "Registrarse";
             this.btnSignIn.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.EnabledCalc = true;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtUsuario.Location = new System.Drawing.Point(36, 185);
-            this.txtUsuario.MaxLength = 32767;
-            this.txtUsuario.MultiLine = false;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = false;
-            this.txtUsuario.Size = new System.Drawing.Size(161, 29);
-            this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsuario.UseSystemPasswordChar = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // lblContraseña
             // 
@@ -153,154 +242,50 @@
             this.lblContraseña.BackColor = System.Drawing.Color.Transparent;
             this.lblContraseña.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblContraseña.Location = new System.Drawing.Point(33, 223);
+            this.lblContraseña.Location = new System.Drawing.Point(201, 228);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(74, 17);
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña";
             // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.White;
-            this.txtContraseña.EnabledCalc = true;
-            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtContraseña.Location = new System.Drawing.Point(36, 243);
-            this.txtContraseña.MaxLength = 32767;
-            this.txtContraseña.MultiLine = false;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.ReadOnly = false;
-            this.txtContraseña.Size = new System.Drawing.Size(161, 29);
-            this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtContraseña.UseSystemPasswordChar = false;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblUsuario.Location = new System.Drawing.Point(33, 165);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(53, 17);
-            this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Usuario";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.EnabledCalc = true;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtNombre.Location = new System.Drawing.Point(36, 68);
-            this.txtNombre.MaxLength = 32767;
-            this.txtNombre.MultiLine = false;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = false;
-            this.txtNombre.Size = new System.Drawing.Size(161, 29);
-            this.txtNombre.TabIndex = 14;
-            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombre.UseSystemPasswordChar = false;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.BackColor = System.Drawing.Color.Transparent;
-            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblApellido.Location = new System.Drawing.Point(33, 106);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(56, 17);
-            this.lblApellido.TabIndex = 16;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.BackColor = System.Drawing.Color.White;
-            this.txtApellido.EnabledCalc = true;
-            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtApellido.Location = new System.Drawing.Point(36, 126);
-            this.txtApellido.MaxLength = 32767;
-            this.txtApellido.MultiLine = false;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.ReadOnly = false;
-            this.txtApellido.Size = new System.Drawing.Size(161, 29);
-            this.txtApellido.TabIndex = 13;
-            this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtApellido.UseSystemPasswordChar = false;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblNombre.Location = new System.Drawing.Point(33, 48);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(57, 17);
-            this.lblNombre.TabIndex = 15;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblRepContra
-            // 
-            this.lblRepContra.AutoSize = true;
-            this.lblRepContra.BackColor = System.Drawing.Color.Transparent;
-            this.lblRepContra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.lblRepContra.Location = new System.Drawing.Point(33, 281);
-            this.lblRepContra.Name = "lblRepContra";
-            this.lblRepContra.Size = new System.Drawing.Size(118, 17);
-            this.lblRepContra.TabIndex = 18;
-            this.lblRepContra.Text = "Repetir contraseña";
-            // 
-            // txtRepContra
-            // 
-            this.txtRepContra.BackColor = System.Drawing.Color.White;
-            this.txtRepContra.EnabledCalc = true;
-            this.txtRepContra.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRepContra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.txtRepContra.Location = new System.Drawing.Point(36, 301);
-            this.txtRepContra.MaxLength = 32767;
-            this.txtRepContra.MultiLine = false;
-            this.txtRepContra.Name = "txtRepContra";
-            this.txtRepContra.ReadOnly = false;
-            this.txtRepContra.Size = new System.Drawing.Size(161, 29);
-            this.txtRepContra.TabIndex = 17;
-            this.txtRepContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtRepContra.UseSystemPasswordChar = false;
-            // 
             // frmSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 524);
-            this.Controls.Add(this.hopeGroupBox1);
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ClientSize = new System.Drawing.Size(684, 561);
+            this.Controls.Add(this.panelCrearCuenta);
             this.Name = "frmSignIn";
-            this.Text = "frmSignIn";
-            this.hopeGroupBox1.ResumeLayout(false);
-            this.hopeGroupBox1.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrate";
+            this.panelCrearCuenta.ResumeLayout(false);
+            this.panelCrearCuenta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picReContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVerContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCandado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgReCandado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox1;
-        private ReaLTaiizor.Controls.DungeonLabel lblSignIn;
+        private System.Windows.Forms.Panel panelCrearCuenta;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.PictureBox imgCandado;
+        private ReaLTaiizor.Controls.DungeonLabel dungeonLabel2;
+        private System.Windows.Forms.TextBox txtReContraseña;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.PictureBox imgReCandado;
+        private System.Windows.Forms.PictureBox imUsuario;
+        private ReaLTaiizor.Controls.DungeonLabel lblCrearCuenta;
         private ReaLTaiizor.Controls.DungeonLabel lblPregunta;
-        private ReaLTaiizor.Controls.FoxLinkLabel linkLblLogIn;
-        private ReaLTaiizor.Controls.Button btnSignIn;
-        private ReaLTaiizor.Controls.AloneTextBox txtUsuario;
-        private ReaLTaiizor.Controls.DungeonLabel lblContraseña;
-        private ReaLTaiizor.Controls.AloneTextBox txtContraseña;
+        private ReaLTaiizor.Controls.FoxLinkLabel linkLblIniSesion;
         private ReaLTaiizor.Controls.DungeonLabel lblUsuario;
-        private ReaLTaiizor.Controls.DungeonLabel lblRepContra;
-        private ReaLTaiizor.Controls.AloneTextBox txtRepContra;
-        private ReaLTaiizor.Controls.AloneTextBox txtNombre;
-        private ReaLTaiizor.Controls.DungeonLabel lblApellido;
-        private ReaLTaiizor.Controls.AloneTextBox txtApellido;
-        private ReaLTaiizor.Controls.DungeonLabel lblNombre;
+        private ReaLTaiizor.Controls.Button btnSignIn;
+        private ReaLTaiizor.Controls.DungeonLabel lblContraseña;
+        private System.Windows.Forms.PictureBox picReContraseña;
+        private System.Windows.Forms.PictureBox picVerContraseña;
     }
 }

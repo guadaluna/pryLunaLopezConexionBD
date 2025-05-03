@@ -16,7 +16,7 @@ namespace pryLunaLopezConexionBD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAgenda());
+            Application.Run(new frmLogIn());
         }
     }
 }
