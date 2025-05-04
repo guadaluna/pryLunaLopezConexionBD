@@ -23,7 +23,7 @@ namespace pryLunaLopezConexionBD
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            conexionBD.MostrarContactos(dgvContactos);
+            conexionBD.mostrarContactos(dgvContactos);
             conexionBD.llenarComboCate(cmbCategoria);
             CargarComboBox();
             dgvContactos.CellEndEdit += dgvContactos_CellEndEdit;
@@ -45,7 +45,7 @@ namespace pryLunaLopezConexionBD
 
             MessageBox.Show("El contacto ha sido eliminado exitosamente");
 
-            conexionBD.MostrarContactos(dgvContactos);
+            conexionBD.mostrarContactos(dgvContactos);
         }
 
         private void cmbId_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,18 +71,11 @@ namespace pryLunaLopezConexionBD
             conexion.Close();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(cmbId.SelectedValue);
-            clsConexionBD conexion = new clsConexionBD();
-            DataTable resultado = conexion.BuscarContactoPorId(id);
-            dgvContactos.DataSource = resultado;
 
-        }
 
         private void btnVerTodos_Click(object sender, EventArgs e)
         {
-            conexionBD.MostrarContactos(dgvContactos);
+            conexionBD.mostrarContactos(dgvContactos);
         }
 
         private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -120,7 +113,7 @@ namespace pryLunaLopezConexionBD
 
             MessageBox.Show("El contacto ha sido añadido exitosamente");
 
-            conexionBD.MostrarContactos(dgvContactos);
+            conexionBD.mostrarContactos(dgvContactos);
         }
     }
 }

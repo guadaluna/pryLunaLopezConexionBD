@@ -23,9 +23,7 @@ namespace pryLunaLopezConexionBD
         {
             conexionBD.mostrarProductos(dgvProductos);
             conexionBD.llenarComboCate(cmbCategoria);
-            dgvProductos.CellEndEdit += dgvProductos_CellEndEdit;
-            dgvProductos.Columns["Codigo"].ReadOnly = true;
-            conexionBD.CargarCmbProductos(cmbProducto);
+            dgvProductos.AllowUserToAddRows = false;
         }
 
 
@@ -43,40 +41,12 @@ namespace pryLunaLopezConexionBD
 
         }
 
-        private void btnVerTodos_Click(object sender, EventArgs e)
-        {
-            conexionBD.mostrarProductos(dgvProductos);
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(cmbProducto.SelectedValue);
-            clsConexionBD conexion = new clsConexionBD();
-            DataTable resultado = conexion.BuscarProductoPorId(id);
-            dgvProductos.DataSource = resultado;
-        }
-
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            clsConexionBD agregar = new clsConexionBD();
-            agregar.nombre = txtNombre.Text;
-            agregar.descripcion = txtDescripcion.Text;
-            agregar.precio = Convert.ToDecimal(txtPrecio.Text);
-            agregar.stock = Convert.ToInt32(numStock.Value);
-            agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
-            agregar.agregarProducto();
-
-            conexionBD.mostrarProductos(dgvProductos);
-        }
-
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Para evitar errores al hacer clic en el encabezado
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvProductos.Rows[e.RowIndex];
 
-                // Suponiendo que tenés estos campos
                 txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = fila.Cells["Descripcion"].Value.ToString();
                 cmbCategoria.SelectedValue = fila.Cells["CategoriaId"].Value;
@@ -85,16 +55,65 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            clsConexionBD agregar = new clsConexionBD();
+            if (txtPrecio.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || numStock.Value == 0 || cmbCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor complete los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                agregar.nombre = txtNombre.Text;
+                agregar.descripcion = txtDescripcion.Text;
+                agregar.precio = Convert.ToDecimal(txtPrecio.Text);
+                agregar.stock = Convert.ToInt32(numStock.Value);
+                agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+                agregar.agregarProducto();
+
+                conexionBD.mostrarProductos(dgvProductos);
+            }
+            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            dgvProductos.ReadOnly = !dgvProductos.ReadOnly;
+            dgvProductos.Columns["Codigo"].ReadOnly = true;
+
+            bool controlesHabilitados = dgvProductos.ReadOnly;
+
+            txtNombre.Enabled = controlesHabilitados;
+            txtDescripcion.Enabled = controlesHabilitados;
+            cmbCategoria.Enabled = controlesHabilitados;
+            txtPrecio.Enabled = controlesHabilitados;
+            numStock.Enabled = controlesHabilitados;
+
+            if (dgvProductos.ReadOnly)
+            {
+                MessageBox.Show("Los cambios han sido guardados", "Guardar cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnModificar.Text = "Editar";
+
+
+            }
+            else
+            {
+                MessageBox.Show("La edición ha sido habilitada. Modificá directamente en la tabla", "Edición habilitada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnModificar.Text = "Guardar Cambios";
+            }
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             clsConexionBD conexion = new clsConexionBD();
-            if(txtPrecio.Text == "" || txtNombre.Text == "" || txtPrecio.Text == "" || numStock.Value == 0 || cmbCategoria.SelectedIndex == -1)
+            if (txtPrecio.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || numStock.Value == 0 || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor seleccione un producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if(MessageBox.Show("¿Está seguro de eliminarlo?", "Mensaje de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Está seguro de eliminarlo?", "Mensaje de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int codigo = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Codigo"].Value);
 
@@ -104,6 +123,31 @@ namespace pryLunaLopezConexionBD
             }
             conexion.mostrarProductos(dgvProductos);
 
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            clsConexionBD conexion = new clsConexionBD();
+            DataTable dt = conexion.buscarPorNombre(txtBuscar.Text);
+
+            if (dt != null)
+            {
+                dgvProductos.DataSource = dt;
+            }
+        }
+
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            conexionBD.mostrarProductos(dgvProductos);
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtPrecio.Text = "";
+            numStock.Text = "";
         }
     }
 }

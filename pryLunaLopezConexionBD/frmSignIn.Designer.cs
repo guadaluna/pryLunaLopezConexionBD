@@ -55,7 +55,7 @@
             // 
             // panelCrearCuenta
             // 
-            this.panelCrearCuenta.BackColor = System.Drawing.Color.Honeydew;
+            this.panelCrearCuenta.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panelCrearCuenta.Controls.Add(this.picReContraseña);
             this.panelCrearCuenta.Controls.Add(this.picVerContraseña);
             this.panelCrearCuenta.Controls.Add(this.txtContraseña);
@@ -252,7 +252,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(684, 561);
             this.Controls.Add(this.panelCrearCuenta);
             this.Name = "frmSignIn";

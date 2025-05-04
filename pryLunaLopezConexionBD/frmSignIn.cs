@@ -73,5 +73,6 @@ namespace pryLunaLopezConexionBD
                 ? Properties.Resources.icons8_eye_15
                 : Properties.Resources.icons8_closed_eye_15;
         }
+
     }
 }

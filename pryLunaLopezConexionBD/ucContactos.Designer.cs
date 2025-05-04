@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpBuscar = new System.Windows.Forms.GroupBox();
-            this.btnVerProductos = new System.Windows.Forms.Button();
-            this.cmbId = new System.Windows.Forms.ComboBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnVerTodos = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpAgregarContacto = new System.Windows.Forms.GroupBox();
+            this.btnModificar = new ReaLTaiizor.Controls.AloneButton();
+            this.btnEliminar = new ReaLTaiizor.Controls.AloneButton();
             this.btnAgregar = new ReaLTaiizor.Controls.AloneButton();
             this.cmbCategoria = new ReaLTaiizor.Controls.DungeonComboBox();
             this.txtCorreo = new ReaLTaiizor.Controls.DungeonTextBox();
@@ -46,72 +47,20 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.dgvContactos = new System.Windows.Forms.DataGridView();
-            this.grpBuscar.SuspendLayout();
+            this.dgvContactos = new Sunny.UI.UIDataGridView();
+            this.btnMostrarTodos = new ReaLTaiizor.Controls.AloneButton();
+            this.txtBuscar = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.btnLimpiar = new ReaLTaiizor.Controls.AloneButton();
             this.grpAgregarContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpBuscar
-            // 
-            this.grpBuscar.Controls.Add(this.btnVerProductos);
-            this.grpBuscar.Controls.Add(this.cmbId);
-            this.grpBuscar.Controls.Add(this.btnEliminar);
-            this.grpBuscar.Controls.Add(this.btnVerTodos);
-            this.grpBuscar.Controls.Add(this.btnBuscar);
-            this.grpBuscar.Location = new System.Drawing.Point(852, 20);
-            this.grpBuscar.Name = "grpBuscar";
-            this.grpBuscar.Size = new System.Drawing.Size(152, 360);
-            this.grpBuscar.TabIndex = 22;
-            this.grpBuscar.TabStop = false;
-            this.grpBuscar.Text = "Buscar y eliminar contacto";
-            // 
-            // btnVerProductos
-            // 
-            this.btnVerProductos.Location = new System.Drawing.Point(26, 169);
-            this.btnVerProductos.Name = "btnVerProductos";
-            this.btnVerProductos.Size = new System.Drawing.Size(100, 23);
-            this.btnVerProductos.TabIndex = 18;
-            this.btnVerProductos.Text = "Ver Productos";
-            this.btnVerProductos.UseVisualStyleBackColor = true;
-            // 
-            // cmbId
-            // 
-            this.cmbId.FormattingEnabled = true;
-            this.cmbId.Location = new System.Drawing.Point(27, 40);
-            this.cmbId.Name = "cmbId";
-            this.cmbId.Size = new System.Drawing.Size(100, 21);
-            this.cmbId.TabIndex = 14;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(27, 67);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 23);
-            this.btnEliminar.TabIndex = 12;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnVerTodos
-            // 
-            this.btnVerTodos.Location = new System.Drawing.Point(27, 125);
-            this.btnVerTodos.Name = "btnVerTodos";
-            this.btnVerTodos.Size = new System.Drawing.Size(100, 23);
-            this.btnVerTodos.TabIndex = 17;
-            this.btnVerTodos.Text = "Ver Todos";
-            this.btnVerTodos.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(27, 96);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(100, 23);
-            this.btnBuscar.TabIndex = 16;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // grpAgregarContacto
             // 
+            this.grpAgregarContacto.Controls.Add(this.btnLimpiar);
+            this.grpAgregarContacto.Controls.Add(this.btnModificar);
+            this.grpAgregarContacto.Controls.Add(this.btnEliminar);
             this.grpAgregarContacto.Controls.Add(this.btnAgregar);
             this.grpAgregarContacto.Controls.Add(this.cmbCategoria);
             this.grpAgregarContacto.Controls.Add(this.txtCorreo);
@@ -123,12 +72,38 @@
             this.grpAgregarContacto.Controls.Add(this.lblTelefono);
             this.grpAgregarContacto.Controls.Add(this.lblCorreo);
             this.grpAgregarContacto.Controls.Add(this.lblCategoria);
-            this.grpAgregarContacto.Location = new System.Drawing.Point(19, 20);
+            this.grpAgregarContacto.Location = new System.Drawing.Point(46, 82);
             this.grpAgregarContacto.Name = "grpAgregarContacto";
-            this.grpAgregarContacto.Size = new System.Drawing.Size(184, 360);
+            this.grpAgregarContacto.Size = new System.Drawing.Size(180, 445);
             this.grpAgregarContacto.TabIndex = 21;
             this.grpAgregarContacto.TabStop = false;
             this.grpAgregarContacto.Text = "Agregar contacto";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.EnabledCalc = true;
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnModificar.Location = new System.Drawing.Point(20, 367);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(128, 29);
+            this.btnModificar.TabIndex = 31;
+            this.btnModificar.Text = "Editar";
+            this.btnModificar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnModificar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.EnabledCalc = true;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnEliminar.Location = new System.Drawing.Point(20, 332);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(128, 29);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -141,6 +116,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(128, 29);
             this.btnAgregar.TabIndex = 28;
             this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnAgregar_Click);
             // 
             // cmbCategoria
             // 
@@ -194,7 +170,7 @@
             this.txtTelefono.EdgeColor = System.Drawing.Color.White;
             this.txtTelefono.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTelefono.Location = new System.Drawing.Point(20, 143);
+            this.txtTelefono.Location = new System.Drawing.Point(20, 148);
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Multiline = false;
             this.txtTelefono.Name = "txtTelefono";
@@ -211,7 +187,7 @@
             this.txtApellido.EdgeColor = System.Drawing.Color.White;
             this.txtApellido.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtApellido.ForeColor = System.Drawing.Color.DimGray;
-            this.txtApellido.Location = new System.Drawing.Point(20, 91);
+            this.txtApellido.Location = new System.Drawing.Point(20, 95);
             this.txtApellido.MaxLength = 32767;
             this.txtApellido.Multiline = false;
             this.txtApellido.Name = "txtApellido";
@@ -228,7 +204,7 @@
             this.txtNombre.EdgeColor = System.Drawing.Color.White;
             this.txtNombre.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txtNombre.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNombre.Location = new System.Drawing.Point(20, 44);
+            this.txtNombre.Location = new System.Drawing.Point(20, 43);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.Multiline = false;
             this.txtNombre.Name = "txtNombre";
@@ -250,7 +226,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(17, 75);
+            this.lblApellido.Location = new System.Drawing.Point(17, 79);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 3;
@@ -259,7 +235,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(17, 127);
+            this.lblTelefono.Location = new System.Drawing.Point(17, 132);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 5;
@@ -285,39 +261,126 @@
             // 
             // dgvContactos
             // 
-            this.dgvContactos.AllowUserToAddRows = false;
-            this.dgvContactos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvContactos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvContactos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvContactos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContactos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContactos.Location = new System.Drawing.Point(209, 20);
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvContactos.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvContactos.EnableHeadersVisualStyles = false;
+            this.dgvContactos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgvContactos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.dgvContactos.Location = new System.Drawing.Point(232, 82);
             this.dgvContactos.Name = "dgvContactos";
-            this.dgvContactos.Size = new System.Drawing.Size(637, 360);
-            this.dgvContactos.TabIndex = 20;
+            this.dgvContactos.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContactos.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgvContactos.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvContactos.SelectedIndex = -1;
+            this.dgvContactos.Size = new System.Drawing.Size(643, 436);
+            this.dgvContactos.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.dgvContactos.TabIndex = 23;
+            this.dgvContactos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellClick);
+            this.dgvContactos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellEndEdit);
+            // 
+            // btnMostrarTodos
+            // 
+            this.btnMostrarTodos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMostrarTodos.EnabledCalc = true;
+            this.btnMostrarTodos.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMostrarTodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnMostrarTodos.Location = new System.Drawing.Point(747, 534);
+            this.btnMostrarTodos.Name = "btnMostrarTodos";
+            this.btnMostrarTodos.Size = new System.Drawing.Size(128, 29);
+            this.btnMostrarTodos.TabIndex = 29;
+            this.btnMostrarTodos.Text = "MostrarTodos";
+            this.btnMostrarTodos.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnMostrarTodos_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.txtBuscar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtBuscar.EdgeColor = System.Drawing.Color.White;
+            this.txtBuscar.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txtBuscar.ForeColor = System.Drawing.Color.DimGray;
+            this.txtBuscar.Location = new System.Drawing.Point(334, 41);
+            this.txtBuscar.MaxLength = 32767;
+            this.txtBuscar.Multiline = false;
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.ReadOnly = false;
+            this.txtBuscar.Size = new System.Drawing.Size(128, 28);
+            this.txtBuscar.TabIndex = 31;
+            this.txtBuscar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuscar.UseSystemPasswordChar = false;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Location = new System.Drawing.Point(229, 48);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(99, 13);
+            this.lblBusqueda.TabIndex = 30;
+            this.lblBusqueda.Text = "Buscar por nombre:";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.EnabledCalc = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(20, 402);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 29);
+            this.btnLimpiar.TabIndex = 32;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnLimpiar_Click);
             // 
             // ucContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grpBuscar);
-            this.Controls.Add(this.grpAgregarContacto);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblBusqueda);
+            this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.dgvContactos);
+            this.Controls.Add(this.grpAgregarContacto);
             this.Name = "ucContactos";
-            this.Size = new System.Drawing.Size(1080, 496);
-            this.grpBuscar.ResumeLayout(false);
+            this.Size = new System.Drawing.Size(936, 595);
+            this.Load += new System.EventHandler(this.ucContactos_Load);
             this.grpAgregarContacto.ResumeLayout(false);
             this.grpAgregarContacto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox grpBuscar;
-        private System.Windows.Forms.Button btnVerProductos;
-        private System.Windows.Forms.ComboBox cmbId;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnVerTodos;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpAgregarContacto;
         private ReaLTaiizor.Controls.AloneButton btnAgregar;
         private ReaLTaiizor.Controls.DungeonComboBox cmbCategoria;
@@ -330,6 +393,12 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.DataGridView dgvContactos;
+        private Sunny.UI.UIDataGridView dgvContactos;
+        private ReaLTaiizor.Controls.AloneButton btnModificar;
+        private ReaLTaiizor.Controls.AloneButton btnEliminar;
+        private ReaLTaiizor.Controls.AloneButton btnMostrarTodos;
+        private ReaLTaiizor.Controls.DungeonTextBox txtBuscar;
+        private System.Windows.Forms.Label lblBusqueda;
+        private ReaLTaiizor.Controls.AloneButton btnLimpiar;
     }
 }

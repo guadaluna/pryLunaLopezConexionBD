@@ -26,7 +26,7 @@ namespace pryLunaLopezConexionBD
             conexionBD.llenarComboCate(cmbCategoria);
             dgvProductos.CellEndEdit += dgvProductos_CellEndEdit;
             dgvProductos.Columns["Codigo"].ReadOnly = true;
-            conexionBD.CargarCmbProductos(cmbProducto);
+            //conexionBD.CargarCmbProductos(cmbProducto);
         }
 
 
@@ -49,6 +49,7 @@ namespace pryLunaLopezConexionBD
             conexionBD.mostrarProductos(dgvProductos);
         }
 
+        /*
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cmbProducto.SelectedValue);
@@ -56,6 +57,7 @@ namespace pryLunaLopezConexionBD
             DataTable resultado = conexion.BuscarProductoPorId(id);
             dgvProductos.DataSource = resultado;
         }
+        */
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

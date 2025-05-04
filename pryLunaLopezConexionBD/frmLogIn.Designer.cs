@@ -52,7 +52,7 @@
             // 
             // panelIniciarSesion
             // 
-            this.panelIniciarSesion.BackColor = System.Drawing.Color.Honeydew;
+            this.panelIniciarSesion.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panelIniciarSesion.Controls.Add(this.picVerContraseña);
             this.panelIniciarSesion.Controls.Add(this.txtContraseña);
             this.panelIniciarSesion.Controls.Add(this.txtUsuario);
@@ -91,6 +91,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(161, 20);
             this.txtContraseña.TabIndex = 17;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContraseña_KeyDown);
             // 
             // txtUsuario
             // 
@@ -228,7 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(684, 561);
             this.Controls.Add(this.panelIniciarSesion);
             this.Name = "frmLogIn";

@@ -15,11 +15,30 @@ namespace pryLunaLopezConexionBD
         public frmPrincipal()
         {
             InitializeComponent();
+
+            ucProductos.Dock = DockStyle.Fill;
+            ucContactos.Dock = DockStyle.Fill;
+
+            pUcProductos.Controls.Add(ucProductos);
+            pUcProductos.Controls.Add(ucContactos);
+
+            ucProductos.Visible = true;
+            ucContactos.Visible = false;
+
+        }
+
+
+        ucContactos ucContactos = new ucContactos();
+        ucProductos ucProductos = new ucProductos();
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar sesión?", "Mensae de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 frmLogIn logIn = new frmLogIn();
                 logIn.Show();
@@ -28,5 +47,22 @@ namespace pryLunaLopezConexionBD
             }
 
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            ucProductos.Visible = true;
+            ucProductos.BringToFront();
+            ucContactos.Visible = false;
+        }
+
+        private void btnContactos_Click(object sender, EventArgs e)
+        {
+            ucContactos.Visible = true;
+            ucContactos.BringToFront();
+            ucProductos.Visible = false;
+        }
+
+
+
     }
 }

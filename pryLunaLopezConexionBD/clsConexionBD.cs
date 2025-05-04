@@ -54,7 +54,7 @@ namespace pryLunaLopezConexionBD
 
         //TABLA CONTACTOS
         //Mostrar en agenda
-        public void MostrarContactos(DataGridView dgv)
+        public void mostrarContactos(DataGridView dgv)
         {
             try
             {
@@ -115,7 +115,10 @@ namespace pryLunaLopezConexionBD
                     comando.Parameters.AddWithValue("@CategoriaId", categoriaId);
 
                     comando.ExecuteNonQuery();
+                    
                 }
+
+                MessageBox.Show("El contacto ha sido añadido exitosamente", "Agregar contacto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
@@ -125,7 +128,7 @@ namespace pryLunaLopezConexionBD
         }
 
         //Buscar contacto
-        public DataTable BuscarContactoPorId(int id)
+        public DataTable buscarContacto(string nombre)
         {
             try
             {
@@ -133,11 +136,10 @@ namespace pryLunaLopezConexionBD
 
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    string consulta = "SELECT * FROM Contactos WHERE Id = @id";
-
+                    string consulta = "SELECT * FROM Contactos WHERE Nombre COLLATE Latin1_General_CI_AI LIKE @nombre";
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@Id", id);
+                        comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
                         SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                         adaptador.Fill(resultado);
@@ -146,14 +148,30 @@ namespace pryLunaLopezConexionBD
 
                 return resultado;
             }
-
-
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
                 return null;
             }
 
+        }
+
+        public void eliminarContacto(int id)
+        {
+            try
+            {
+                ConectarBD();
+                string consulta = "DELETE FROM Contactos WHERE Id = @id";
+                SqlCommand deleteCmd = new SqlCommand(consulta, conexionBaseDatos);
+                deleteCmd.Parameters.AddWithValue("@id", id);
+                deleteCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Producto eliminado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         //Modificar contacto en la agenda
@@ -178,8 +196,6 @@ namespace pryLunaLopezConexionBD
                         cmd.ExecuteNonQuery();
                     }
                 }
-
-                MessageBox.Show("Contacto actualizado correctamente.");
             }
             catch (Exception ex)
             {
@@ -226,7 +242,7 @@ namespace pryLunaLopezConexionBD
                 cmd.Parameters.AddWithValue("@stock", stock);
                 cmd.Parameters.AddWithValue("@categoriaId", categoriaId);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("✅ Producto agregado con éxito.");
+                MessageBox.Show("Producto agregado exitosamente", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -251,7 +267,6 @@ namespace pryLunaLopezConexionBD
                 cmd.Parameters.AddWithValue("@stock", stock);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("🔄 Producto actualizado.");
             }
             catch (Exception ex)
             {
@@ -261,6 +276,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+       /* 
         public void CargarCmbProductos(ComboBox cmb)
         {
             try
@@ -282,8 +298,10 @@ namespace pryLunaLopezConexionBD
             }
 
         }
+        */
 
-        public DataTable BuscarProductoPorId(int codigo)
+        /*
+        public DataTable buscarPorNombre(string nombre)
         {
             try
             {
@@ -291,11 +309,39 @@ namespace pryLunaLopezConexionBD
 
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    string consulta = "SELECT * FROM Productos WHERE Codigo = @codigo";
+                    string consulta = "SELECT * FROM Productos WHERE Nombre = @nombre";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@codigo", codigo);
+                        comando.Parameters.AddWithValue("@nombre", nombre);
+
+                        SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                        adaptador.Fill(resultado);
+                    }
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+        }
+        */
+
+        public DataTable buscarPorNombre(string nombre)
+        {
+            try
+            {
+                DataTable resultado = new DataTable();
+
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    string consulta = "SELECT * FROM Productos WHERE Nombre COLLATE Latin1_General_CI_AI LIKE @nombre";
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
                         SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                         adaptador.Fill(resultado);
@@ -321,7 +367,7 @@ namespace pryLunaLopezConexionBD
                 deleteCmd.Parameters.AddWithValue("@codigo", codigo);
                 deleteCmd.ExecuteNonQuery();
 
-                MessageBox.Show("El contacto ha sido eliminado exitosamente");
+                MessageBox.Show("Producto eliminado exitosamente");
             }
             catch (Exception ex)
             {
@@ -334,15 +380,15 @@ namespace pryLunaLopezConexionBD
             try
             {
                 ConectarBD();
-                    string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña) VALUES (@user, @password)";
-                    SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
+                string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña) VALUES (@user, @password)";
+                SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
 
-                    cmd.Parameters.AddWithValue("@user", user);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@user", user);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.ExecuteNonQuery();
 
 
-                    MessageBox.Show("Registro exitoso");
+                MessageBox.Show("Registro exitoso");
             }
             catch(Exception ex) 
             {
@@ -356,14 +402,14 @@ namespace pryLunaLopezConexionBD
             {
                 ConectarBD();
 
-                    string consulta = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @user AND Contraseña = @password";
-                    SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos);
-                    comando.Parameters.AddWithValue("@user", user);
-                    comando.Parameters.AddWithValue("@password", password);
+                string consulta = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @user AND Contraseña = @password";
+                SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos);
+                comando.Parameters.AddWithValue("@user", user);
+                comando.Parameters.AddWithValue("@password", password);
 
-                    int contador = (int)comando.ExecuteScalar();
+                int contador = (int)comando.ExecuteScalar();
 
-                    return contador > 0;
+                return contador > 0;
             }
             catch (Exception ex)
             {

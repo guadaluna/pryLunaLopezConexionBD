@@ -43,7 +43,6 @@ namespace pryLunaLopezConexionBD
 
                 if (conexionBD.IniciarSesion())
                 {
-                    MessageBox.Show("Inicio de sesión exitoso");
                     frmPrincipal form = new frmPrincipal();
                     form.Show();
                     this.Hide();
@@ -69,6 +68,15 @@ namespace pryLunaLopezConexionBD
         private void frmLogIn_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Llama directamente al método del botón
+                btnLogIn_Click(sender, e);
+            }
         }
     }
 }
