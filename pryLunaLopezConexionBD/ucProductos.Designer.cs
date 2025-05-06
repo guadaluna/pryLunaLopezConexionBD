@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpProducto = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new ReaLTaiizor.Controls.AloneButton();
             this.btnModificar = new ReaLTaiizor.Controls.AloneButton();
             this.btnEliminar = new ReaLTaiizor.Controls.AloneButton();
             this.numStock = new ReaLTaiizor.Controls.DungeonNumeric();
@@ -51,7 +52,6 @@
             this.txtBuscar = new ReaLTaiizor.Controls.DungeonTextBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnMostrarTodos = new ReaLTaiizor.Controls.AloneButton();
-            this.btnLimpiar = new ReaLTaiizor.Controls.AloneButton();
             this.grpProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,19 @@
             this.grpProducto.TabIndex = 24;
             this.grpProducto.TabStop = false;
             this.grpProducto.Text = "Producto";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.EnabledCalc = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(20, 402);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(128, 29);
+            this.btnLimpiar.TabIndex = 29;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnLimpiar_Click);
             // 
             // btnModificar
             // 
@@ -346,21 +359,8 @@
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(128, 29);
             this.btnMostrarTodos.TabIndex = 28;
-            this.btnMostrarTodos.Text = "MostrarTodos";
+            this.btnMostrarTodos.Text = "Mostrar todos";
             this.btnMostrarTodos.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnMostrarTodos_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.EnabledCalc = true;
-            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(133)))), ((int)(((byte)(142)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(20, 402);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(128, 29);
-            this.btnLimpiar.TabIndex = 29;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.Click += new ReaLTaiizor.Controls.AloneButton.ClickEventHandler(this.btnLimpiar_Click);
             // 
             // ucProductos
             // 

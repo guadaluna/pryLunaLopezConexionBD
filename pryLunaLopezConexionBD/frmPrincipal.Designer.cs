@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pOpciones = new System.Windows.Forms.Panel();
+            this.picInventario = new System.Windows.Forms.PictureBox();
+            this.lblInventario = new ReaLTaiizor.Controls.BigLabel();
             this.btnContactos = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.pUcProductos = new System.Windows.Forms.Panel();
-            this.lblInventario = new ReaLTaiizor.Controls.BigLabel();
-            this.picInventario = new System.Windows.Forms.PictureBox();
             this.pOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picInventario)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,29 @@
             this.pOpciones.Name = "pOpciones";
             this.pOpciones.Size = new System.Drawing.Size(232, 709);
             this.pOpciones.TabIndex = 0;
+            // 
+            // picInventario
+            // 
+            this.picInventario.Image = ((System.Drawing.Image)(resources.GetObject("picInventario.Image")));
+            this.picInventario.InitialImage = ((System.Drawing.Image)(resources.GetObject("picInventario.InitialImage")));
+            this.picInventario.Location = new System.Drawing.Point(64, 61);
+            this.picInventario.Name = "picInventario";
+            this.picInventario.Size = new System.Drawing.Size(89, 72);
+            this.picInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInventario.TabIndex = 5;
+            this.picInventario.TabStop = false;
+            // 
+            // lblInventario
+            // 
+            this.lblInventario.AutoSize = true;
+            this.lblInventario.BackColor = System.Drawing.Color.Transparent;
+            this.lblInventario.Font = new System.Drawing.Font("Segoe UI", 25F);
+            this.lblInventario.ForeColor = System.Drawing.Color.LightCyan;
+            this.lblInventario.Location = new System.Drawing.Point(13, 12);
+            this.lblInventario.Name = "lblInventario";
+            this.lblInventario.Size = new System.Drawing.Size(205, 46);
+            this.lblInventario.TabIndex = 4;
+            this.lblInventario.Text = "¡Bienvenido!";
             // 
             // btnContactos
             // 
@@ -117,29 +140,6 @@
             this.pUcProductos.Name = "pUcProductos";
             this.pUcProductos.Size = new System.Drawing.Size(906, 685);
             this.pUcProductos.TabIndex = 3;
-            // 
-            // lblInventario
-            // 
-            this.lblInventario.AutoSize = true;
-            this.lblInventario.BackColor = System.Drawing.Color.Transparent;
-            this.lblInventario.Font = new System.Drawing.Font("Segoe UI", 25F);
-            this.lblInventario.ForeColor = System.Drawing.Color.LightCyan;
-            this.lblInventario.Location = new System.Drawing.Point(13, 12);
-            this.lblInventario.Name = "lblInventario";
-            this.lblInventario.Size = new System.Drawing.Size(205, 46);
-            this.lblInventario.TabIndex = 4;
-            this.lblInventario.Text = "!Bienvenido¡";
-            // 
-            // picInventario
-            // 
-            this.picInventario.Image = ((System.Drawing.Image)(resources.GetObject("picInventario.Image")));
-            this.picInventario.InitialImage = ((System.Drawing.Image)(resources.GetObject("picInventario.InitialImage")));
-            this.picInventario.Location = new System.Drawing.Point(64, 61);
-            this.picInventario.Name = "picInventario";
-            this.picInventario.Size = new System.Drawing.Size(89, 72);
-            this.picInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInventario.TabIndex = 5;
-            this.picInventario.TabStop = false;
             // 
             // frmPrincipal
             // 

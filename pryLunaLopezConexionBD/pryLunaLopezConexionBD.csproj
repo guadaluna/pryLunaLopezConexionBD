@@ -67,12 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexionBD.cs" />
-    <Compile Include="frmAgendaDeContactos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAgendaDeContactos.Designer.cs">
-      <DependentUpon>frmAgendaDeContactos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +78,6 @@
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmProductos.Designer.cs">
-      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSignIn.cs">
       <SubType>Form</SubType>
@@ -111,17 +99,11 @@
     <Compile Include="ucProductos.Designer.cs">
       <DependentUpon>ucProductos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmAgendaDeContactos.resx">
-      <DependentUpon>frmAgendaDeContactos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmProductos.resx">
-      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.cs</DependentUpon>

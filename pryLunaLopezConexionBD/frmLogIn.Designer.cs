@@ -40,7 +40,6 @@
             this.lblPregunta = new ReaLTaiizor.Controls.DungeonLabel();
             this.linkLblRegistro = new ReaLTaiizor.Controls.FoxLinkLabel();
             this.lblUsuario = new ReaLTaiizor.Controls.DungeonLabel();
-            this.linkLblOlCon = new ReaLTaiizor.Controls.FoxLinkLabel();
             this.btnLogIn = new ReaLTaiizor.Controls.Button();
             this.lblContraseña = new ReaLTaiizor.Controls.DungeonLabel();
             this.panelIniciarSesion.SuspendLayout();
@@ -63,7 +62,6 @@
             this.panelIniciarSesion.Controls.Add(this.lblPregunta);
             this.panelIniciarSesion.Controls.Add(this.linkLblRegistro);
             this.panelIniciarSesion.Controls.Add(this.lblUsuario);
-            this.panelIniciarSesion.Controls.Add(this.linkLblOlCon);
             this.panelIniciarSesion.Controls.Add(this.btnLogIn);
             this.panelIniciarSesion.Controls.Add(this.lblContraseña);
             this.panelIniciarSesion.Location = new System.Drawing.Point(50, 50);
@@ -181,20 +179,6 @@
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuario";
             // 
-            // linkLblOlCon
-            // 
-            this.linkLblOlCon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLblOlCon.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(149)))), ((int)(((byte)(0)))));
-            this.linkLblOlCon.EnabledCalc = true;
-            this.linkLblOlCon.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLblOlCon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(149)))), ((int)(((byte)(221)))));
-            this.linkLblOlCon.Location = new System.Drawing.Point(204, 283);
-            this.linkLblOlCon.Name = "linkLblOlCon";
-            this.linkLblOlCon.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(140)))), ((int)(((byte)(229)))));
-            this.linkLblOlCon.Size = new System.Drawing.Size(111, 17);
-            this.linkLblOlCon.TabIndex = 9;
-            this.linkLblOlCon.Text = "Olvidé mi contraseña";
-            // 
             // btnLogIn
             // 
             this.btnLogIn.BackColor = System.Drawing.Color.Transparent;
@@ -258,7 +242,6 @@
         private ReaLTaiizor.Controls.DungeonLabel lblPregunta;
         private ReaLTaiizor.Controls.FoxLinkLabel linkLblRegistro;
         private ReaLTaiizor.Controls.DungeonLabel lblUsuario;
-        private ReaLTaiizor.Controls.FoxLinkLabel linkLblOlCon;
         private ReaLTaiizor.Controls.Button btnLogIn;
         private ReaLTaiizor.Controls.DungeonLabel lblContraseña;
         private System.Windows.Forms.PictureBox picVerContraseña;
