@@ -31,11 +31,6 @@ namespace pryLunaLopezConexionBD
         ucContactos ucContactos = new ucContactos();
         ucProductos ucProductos = new ucProductos();
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea cerrar sesión?", "Mensaje de confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

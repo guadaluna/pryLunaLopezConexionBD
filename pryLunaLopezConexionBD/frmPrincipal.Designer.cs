@@ -153,7 +153,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.Text = "Gestor de inventario";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pOpciones.ResumeLayout(false);
             this.pOpciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picInventario)).EndInit();

@@ -276,60 +276,6 @@ namespace pryLunaLopezConexionBD
 
         }
 
-       /* 
-        public void CargarCmbProductos(ComboBox cmb)
-        {
-            try
-            {
-                ConectarBD();
-                string consulta = "SELECT Codigo, Nombre AS Producto FROM Productos";
-                SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                cmb.DisplayMember = "Producto";
-                cmb.ValueMember = "Codigo";
-                cmb.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-        }
-        */
-
-        /*
-        public DataTable buscarPorNombre(string nombre)
-        {
-            try
-            {
-                DataTable resultado = new DataTable();
-
-                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
-                {
-                    string consulta = "SELECT * FROM Productos WHERE Nombre = @nombre";
-
-                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@nombre", nombre);
-
-                        SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                        adaptador.Fill(resultado);
-                    }
-                }
-
-                return resultado;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                return null;
-            }
-        }
-        */
-
         public DataTable buscarPorNombre(string nombre)
         {
             try
