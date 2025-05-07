@@ -74,7 +74,6 @@ namespace pryLunaLopezConexionBD
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // Llama directamente al método del botón
                 btnLogIn_Click(sender, e);
             }
         }
