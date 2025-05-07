@@ -192,7 +192,6 @@
             this.txtTelefono.TabIndex = 25;
             this.txtTelefono.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelefono.UseSystemPasswordChar = false;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtApellido
             // 
