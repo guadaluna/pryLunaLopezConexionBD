@@ -38,8 +38,8 @@ namespace pryLunaLopezConexionBD
             }
             else
             {
-                conexionBD.user = txtUsuario.Text;
-                conexionBD.password = txtContraseña.Text;
+                conexionBD.usuario = txtUsuario.Text;
+                conexionBD.contrasena = txtContraseña.Text;
 
                 if (conexionBD.IniciarSesion())
                 {

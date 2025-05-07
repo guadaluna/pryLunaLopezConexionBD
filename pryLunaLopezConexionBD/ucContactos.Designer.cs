@@ -192,6 +192,7 @@
             this.txtTelefono.TabIndex = 25;
             this.txtTelefono.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelefono.UseSystemPasswordChar = false;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtApellido
             // 
@@ -313,7 +314,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dgvContactos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvContactos.SelectedIndex = -1;
-            this.dgvContactos.Size = new System.Drawing.Size(643, 436);
+            this.dgvContactos.Size = new System.Drawing.Size(643, 445);
             this.dgvContactos.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvContactos.TabIndex = 23;
             this.dgvContactos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellClick);

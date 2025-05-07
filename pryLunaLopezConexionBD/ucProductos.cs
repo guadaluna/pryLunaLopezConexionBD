@@ -58,7 +58,13 @@ namespace pryLunaLopezConexionBD
         
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
             clsConexionBD agregar = new clsConexionBD();
+            if (!txtPrecio.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El precio debe contener solo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (txtPrecio.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || numStock.Value == 0 || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor complete los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -39,8 +39,8 @@ namespace pryLunaLopezConexionBD
         public int codigo;
 
         //Registro
-        public string user;
-        public string password;
+        public string usuario;
+        public string contrasena;
 
         public void ConectarBD()
         {
@@ -156,6 +156,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+        //eliminar contacto
         public void eliminarContacto(int id)
         {
             try
@@ -166,7 +167,7 @@ namespace pryLunaLopezConexionBD
                 deleteCmd.Parameters.AddWithValue("@id", id);
                 deleteCmd.ExecuteNonQuery();
 
-                MessageBox.Show("Producto eliminado exitosamente");
+                MessageBox.Show("Contacto eliminado exitosamente");
             }
             catch (Exception ex)
             {
@@ -229,6 +230,7 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        //Añadir producto
         public void agregarProducto()
         {
             try
@@ -251,6 +253,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+        //Modificar producto
         public void modificarProducto()
         {
             try
@@ -276,6 +279,7 @@ namespace pryLunaLopezConexionBD
 
         }
 
+        //Buscar producto
         public DataTable buscarPorNombre(string nombre)
         {
             try
@@ -303,6 +307,7 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        //Eliminar producto
         public void eliminarProducto(int codigo)
         {
             try
@@ -321,6 +326,8 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        //TABLA USUARIOS
+        //Crear cuenta
         public void RegistrarUsuario()
         {
             try
@@ -329,8 +336,8 @@ namespace pryLunaLopezConexionBD
                 string consulta = "INSERT INTO Usuarios (NombreUsuario, Contraseña) VALUES (@user, @password)";
                 SqlCommand cmd = new SqlCommand(consulta, conexionBaseDatos);
 
-                cmd.Parameters.AddWithValue("@user", user);
-                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
                 cmd.ExecuteNonQuery();
 
 
@@ -342,16 +349,17 @@ namespace pryLunaLopezConexionBD
             }
         }
 
+        //Iniciar sesion
         public bool IniciarSesion()
         {
             try
             {
                 ConectarBD();
 
-                string consulta = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @user AND Contraseña = @password";
+                string consulta = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @usuario AND Contraseña = @contrasena";
                 SqlCommand comando = new SqlCommand(consulta, conexionBaseDatos);
-                comando.Parameters.AddWithValue("@user", user);
-                comando.Parameters.AddWithValue("@password", password);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+                comando.Parameters.AddWithValue("@contrasena", contrasena);
 
                 int contador = (int)comando.ExecuteScalar();
 

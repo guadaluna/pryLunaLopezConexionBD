@@ -16,6 +16,7 @@ namespace pryLunaLopezConexionBD
         public ucContactos()
         {
             InitializeComponent();
+            txtTelefono.KeyPress += txtTelefono_KeyPress;
         }
 
         clsConexionBD conexionBD = new clsConexionBD();
@@ -55,6 +56,11 @@ namespace pryLunaLopezConexionBD
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             clsConexionBD agregar = new clsConexionBD();
+            if (!txtTelefono.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("El teléfono debe contener solo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtTelefono.Text == "" || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor complete los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,6 +149,11 @@ namespace pryLunaLopezConexionBD
             txtApellido.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("Presionaste: " + e.KeyChar);
         }
     }
 }
