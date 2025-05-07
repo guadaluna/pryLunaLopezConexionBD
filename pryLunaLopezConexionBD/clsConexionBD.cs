@@ -184,13 +184,14 @@ namespace pryLunaLopezConexionBD
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string consulta = "UPDATE Contactos SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, CategoriaId = @CategoriaId WHERE Id = @Id";
+                    string consulta = "UPDATE Contactos SET Nombre = @Nombre, Apellido = @Apellido, Telefono = @Telefono, Correo = @Correo, CategoriaId = @CategoriaId WHERE Id = @Id";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
                         cmd.Parameters.AddWithValue("@Nombre", nombre);
                         cmd.Parameters.AddWithValue("@Apellido", apellido);
                         cmd.Parameters.AddWithValue("@Telefono", telefono);
+                        cmd.Parameters.AddWithValue("@Correo", correo);
                         cmd.Parameters.AddWithValue("@CategoriaId", categoriaId);
                         cmd.Parameters.AddWithValue("@Id", id);
 
