@@ -16,7 +16,6 @@ namespace pryLunaLopezConexionBD
         public ucContactos()
         {
             InitializeComponent();
-            txtTelefono.KeyPress += txtTelefono_KeyPress;
         }
 
         clsConexionBD conexionBD = new clsConexionBD();
@@ -30,13 +29,12 @@ namespace pryLunaLopezConexionBD
 
         private void dgvContactos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            clsConexionBD modificar = new clsConexionBD();
-            modificar.id = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["Id"].Value);
-            modificar.nombre = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            modificar.apellido = dgvContactos.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
-            modificar.telefono = dgvContactos.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
-            modificar.categoriaId = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["CategoriaId"].Value);
-            modificar.modificarContacto();
+            conexionBD.id = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["Id"].Value);
+            conexionBD.nombre = dgvContactos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+            conexionBD.apellido = dgvContactos.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
+            conexionBD.telefono = dgvContactos.Rows[e.RowIndex].Cells["Telefono"].Value.ToString();
+            conexionBD.categoriaId = Convert.ToInt32(dgvContactos.Rows[e.RowIndex].Cells["CategoriaId"].Value);
+            conexionBD.modificarContacto();
 
         }
         private void dgvContactos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +53,6 @@ namespace pryLunaLopezConexionBD
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            clsConexionBD agregar = new clsConexionBD();
             if (!txtTelefono.Text.All(char.IsDigit))
             {
                 MessageBox.Show("El teléfono debe contener solo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -67,12 +64,12 @@ namespace pryLunaLopezConexionBD
             }
             else
             {
-                agregar.nombre = txtNombre.Text;
-                agregar.apellido = txtApellido.Text;
-                agregar.telefono = txtTelefono.Text;
-                agregar.correo = txtCorreo.Text;
-                agregar.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
-                agregar.agregarContacto();
+                conexionBD.nombre = txtNombre.Text;
+                conexionBD.apellido = txtApellido.Text;
+                conexionBD.telefono = txtTelefono.Text;
+                conexionBD.correo = txtCorreo.Text;
+                conexionBD.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+                conexionBD.agregarContacto();
 ;
             }
 
@@ -83,7 +80,6 @@ namespace pryLunaLopezConexionBD
         {
             dgvContactos.ReadOnly = !dgvContactos.ReadOnly;
             dgvContactos.Columns["Id"].ReadOnly = true;
-            dgvContactos.Columns["CategoriaId"].ReadOnly = true;
 
             bool controlesHabilitados = dgvContactos.ReadOnly;
 
@@ -109,7 +105,6 @@ namespace pryLunaLopezConexionBD
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            clsConexionBD conexion = new clsConexionBD();
             if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtTelefono.Text == "" || cmbCategoria.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor seleccione un Contacto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,17 +115,16 @@ namespace pryLunaLopezConexionBD
                 {
                     int codigo = Convert.ToInt32(dgvContactos.CurrentRow.Cells["Id"].Value);
 
-                    conexion.eliminarContacto(codigo);
+                    conexionBD.eliminarContacto(codigo);
 
                 }
             }
-            conexion.mostrarContactos(dgvContactos);
+            conexionBD.mostrarContactos(dgvContactos);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            clsConexionBD conexion = new clsConexionBD();
-            DataTable dt = conexion.buscarContacto(txtBuscar.Text);
+            DataTable dt = conexionBD.buscarContacto(txtBuscar.Text);
 
             if (dt != null)
             {
@@ -151,9 +145,5 @@ namespace pryLunaLopezConexionBD
             txtTelefono.Text = "";
         }
 
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("Presionaste: " + e.KeyChar);
-        }
     }
 }
