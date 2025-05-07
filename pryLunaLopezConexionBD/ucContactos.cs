@@ -78,28 +78,31 @@ namespace pryLunaLopezConexionBD
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            dgvContactos.ReadOnly = !dgvContactos.ReadOnly;
-            dgvContactos.Columns["Id"].ReadOnly = true;
-
-            bool controlesHabilitados = dgvContactos.ReadOnly;
-
-            txtNombre.Enabled = controlesHabilitados;
-            txtApellido.Enabled = controlesHabilitados;
-            cmbCategoria.Enabled = controlesHabilitados;
-            txtCorreo.Enabled = controlesHabilitados;
-            txtTelefono.Enabled = controlesHabilitados;
-
-            if (dgvContactos.ReadOnly)
+            if (!txtTelefono.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Los cambios han sido guardados", "Guardar cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnModificar.Text = "Editar";
-
-
+                MessageBox.Show("El teléfono debe contener solo números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+
+
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtTelefono.Text == "" || cmbCategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("La edición ha sido habilitada. Modificá directamente en la tabla", "Edición habilitada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnModificar.Text = "Guardar Cambios";
+                MessageBox.Show("Por favor complete los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dgvContactos.CurrentRow != null)
+            {
+                int idContacto = Convert.ToInt32(dgvContactos.CurrentRow.Cells["Id"].Value);
+
+                conexionBD.id = idContacto;
+                conexionBD.nombre = txtNombre.Text;
+                conexionBD.apellido = txtApellido.Text;
+                conexionBD.telefono = txtTelefono.Text;
+                conexionBD.correo = txtCorreo.Text;
+                conexionBD.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+                conexionBD.modificarContacto();
+
+                MessageBox.Show("Contacto modificado con éxito");
+                conexionBD.mostrarContactos(dgvContactos);
             }
         }
 

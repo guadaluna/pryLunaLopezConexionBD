@@ -28,17 +28,7 @@ namespace pryLunaLopezConexionBD
 
 
 
-        private void dgvProductos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            conexionBD.codigo = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Codigo"].Value);
-            conexionBD.nombre = dgvProductos.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-            conexionBD.descripcion = dgvProductos.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString();
-            conexionBD.precio = Convert.ToDecimal(dgvProductos.Rows[e.RowIndex].Cells["Precio"].Value);
-            conexionBD.stock = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["Stock"].Value);
-            conexionBD.categoriaId = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells["CategoriaId"].Value);
-            conexionBD.modificarProducto();
 
-        }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -82,30 +72,27 @@ namespace pryLunaLopezConexionBD
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            dgvProductos.ReadOnly = !dgvProductos.ReadOnly;
-            dgvProductos.Columns["Codigo"].ReadOnly = true;
-
-            bool controlesHabilitados = dgvProductos.ReadOnly;
-
-            txtNombre.Enabled = controlesHabilitados;
-            txtDescripcion.Enabled = controlesHabilitados;
-            cmbCategoria.Enabled = controlesHabilitados;
-            txtPrecio.Enabled = controlesHabilitados;
-            numStock.Enabled = controlesHabilitados;
-
-            if (dgvProductos.ReadOnly)
+            if (txtPrecio.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || numStock.Value == 0 || cmbCategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("Los cambios han sido guardados", "Guardar cambios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnModificar.Text = "Editar";
-
-
+                MessageBox.Show("Por favor complete los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (dgvProductos.CurrentRow != null)
             {
-                MessageBox.Show("La edición ha sido habilitada. Modificá directamente en la tabla", "Edición habilitada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnModificar.Text = "Guardar Cambios";
+                int idProducto = Convert.ToInt32(dgvProductos.CurrentRow.Cells["Codigo"].Value);
+
+                conexionBD.codigo = idProducto;
+                conexionBD.nombre = txtNombre.Text;
+                conexionBD.descripcion = txtDescripcion.Text;
+                conexionBD.precio = Convert.ToDecimal(txtPrecio.Text);
+                conexionBD.stock = Convert.ToInt32(numStock.Value);
+                conexionBD.categoriaId = Convert.ToInt32(cmbCategoria.SelectedValue);
+                conexionBD.modificarProducto();
+
+                MessageBox.Show("Producto modificado con éxito");
+                conexionBD.mostrarProductos(dgvProductos);
             }
         }
+ 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
